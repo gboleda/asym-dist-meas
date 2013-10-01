@@ -8,10 +8,13 @@ import math
 RANKINGTYPE = 'simple'
 
 def check(u,v):
-    if not (len(u) == len(v)):
-        sys.exit("Fatal error: input vectors not equal in length.")
-    if not (u.dtype == float and v.dtype == float):
-        sys.exit("Fatal error: input vectors not of float type.")
+    """
+    Force checks that u and v have the same dimensions, and that
+    both are numpy float arrays.
+    """
+    assert (len(u) == len(v)), "Input vectors not equal in length."
+    assert u.dtype == float, "u vector not of float type"
+    assert v.dtype == float, "v vector not of float type"
 
 def findIntersectedFeatures(u,v):
     common = []
@@ -26,9 +29,10 @@ def findIntersectedFeatures(u,v):
 def vectorCosine(u,v):
     check(u,v)
     dot = np.dot(u,v)
-    u_modulus = np.math.sqrt((u*u).sum())
-    v_modulus = np.math.sqrt((v*v).sum())
-    cos_angle = dot / (u_modulus * v_modulus) # cosine of angle between u and v
+    u_modulus = np.sqrt((u*u).sum())
+    v_modulus = np.sqrt((v*v).sum())
+    # cosine of angle between u and v
+    cos_angle = dot / (u_modulus * v_modulus)
     return cos_angle
 
 def lin(u,v):
@@ -45,7 +49,8 @@ def alphaSkew(u,v,alpha=.99):
     for i in range(len(u)):
         f_u = u[i]
         f_v = v[i]
-        if not f_v == 0: # if f_v is zero, everything goes to zero (to avoid error caused by log(0))
+        if not f_v == 0:
+            # if f_v is zero, everything goes to zero (to avoid error caused by log(0))
             tmp1 = math.log(f_v / ( alpha * f_u + oneminusalpha * f_v ) ) * f_v
             result += tmp1
     return result
@@ -84,6 +89,10 @@ def findIntersectedFeatures(u,v):
     return (inters_u, inters_v)
 
 def vLength(u):
+    """
+    Returns the number of nonzero features (on features) for
+    vector u.
+    """
     return (u != 0).sum()
 
 def relPrime(v):
@@ -113,17 +122,33 @@ def APinc(u,v):
     result = np.dot(precs[:onFeatures],rel[:onFeatures]) / onFeatures
     return result
 
-def myrank(u,type=RANKINGTYPE):
-    if type == 'simple': return rank_simple(u)
-    elif type == 'averageties': return rank_data(u)
-    elif type == 'randomties': return rank
+def myrank(u, tiebreaking=RANKINGTYPE):
+    """
+    Returns the reverse-ranking of an array. Ties may be broken
+    as either
+        'simple': ties are broken using a stable sort
+        'averageties': all ties are given the same average rank
+        'random': ties are broken randomly
+    """
+    if tiebreaking == 'simple':
+        return rank_simple(u)
+    elif tiebreaking == 'averageties':
+        return rank_data(u)
+    elif tiebreaking == 'randomties':
+        return rank
+    else:
+        raise ValueError("Invalid tiebreaking method, '%s'." % tiebreaking)
 
 def rank_simple(vector):
+    """
+    Returns the reverse ranking of an array, where ties are broken
+    using a stable sort.
+    """
     return np.array(sorted(range(len(vector)), key=vector.__getitem__, reverse=True))
 
-def rankdata(a):
+def rank_averageties(a):
     """
-    Gives a rank vector, with averages for ties.
+    Gives a rank vector, with average rank in the case of ties.
     """
     n = len(a)
     ivec=rank_simple(a)
