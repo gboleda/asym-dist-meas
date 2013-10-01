@@ -93,6 +93,9 @@ def rank_simple(vector):
     return sorted(range(len(vector)), key=vector.__getitem__, reverse=True)
 
 def rankdata(a):
+    """
+    Gives a rank vector, with averages for ties.
+    """
     n = len(a)
     ivec=rank_simple(a)
     svec=[a[rank] for rank in ivec]
