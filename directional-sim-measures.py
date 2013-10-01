@@ -2,6 +2,11 @@ import sys
 import numpy as np
 import math
 
+    # import pdb
+    # pdb.set_trace()
+
+RANKINGTYPE = 'simple'
+
 def check(u,v):
     if not (len(u) == len(v)):
         sys.exit("Fatal error: input vectors not equal in length.")
@@ -78,19 +83,43 @@ def findIntersectedFeatures(u,v):
     inters_v = v[indices]
     return (inters_u, inters_v)
 
-# AP requires ranks. What to do with ties? (cf. zeroes)
+def vLength(u):
+    return (u != 0).sum()
+
+def relPrime(v):
+    result = 1 - ((myrank(v) + 1) / (vLength(v) + 1.))
+    offFeatures = (v == 0)
+    result[offFeatures] = 0
+    return result
+
+def precAtAllRanks(u,v):
+    includedFeatures = (u != 0) & (v != 0)
+    URanking = myrank(u)
+    result = includedFeatures[URanking].cumsum() / (np.arange(len(u)) + 1.)
+    return result
+
 def APinc(u,v):
     check(u,v)
-    rankVector = rankdata(u)
-    for i in range(len(u)):
-        pass
-        #rank = i+1 # technically ranks range from 1 to n, but I won't bother here
-        #        (includedFeatsAtRank, dummy) = findIntersectedFeatures(u[:i],v[:i])
-        #precAtRank = len(includedFeatsAtRank) / len(u[:i])
-        #precAtRankPrevious=precAtRank
+    onFeatures = vLength(u)
+    precs = precAtAllRanks(u,v)
+    URanking = myrank(u)
+    print "precs"
+    print precs
+    print "rels"
+    print relPrime(v)
+    rel = relPrime(v)[URanking]
+    print "rels after sorting"
+    print rel
+    result = np.dot(precs[:onFeatures],rel[:onFeatures]) / onFeatures
+    return result
+
+def myrank(u,type=RANKINGTYPE):
+    if type == 'simple': return rank_simple(u)
+    elif type == 'averageties': return rank_data(u)
+    elif type == 'randomties': return rank
 
 def rank_simple(vector):
-    return sorted(range(len(vector)), key=vector.__getitem__, reverse=True)
+    return np.array(sorted(range(len(vector)), key=vector.__getitem__, reverse=True))
 
 def rankdata(a):
     """
@@ -135,3 +164,4 @@ u = data[0]; v = data[1]
 # print "ClarkeDE: 0.5"
 # print ClarkeDE(u,v)
 # print "balAPinc: still missing"
+#print APinc(u,v)
