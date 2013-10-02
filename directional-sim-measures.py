@@ -96,7 +96,23 @@ def vLength(u):
     return (u != 0).sum()
 
 def relPrime(v):
-    result = 1 - ((myrank(v) + 1) / (vLength(v) + 1.))
+    # print
+    # print "v:"
+    # print v
+    # print
+    # print "ranked:"
+    # print myrank(v)
+    # print
+    # print "ordering:"
+    # print v[myrank(v)]
+    # print
+    # GBT: I think I found out what's wrong. The problem is that myrank returns the indices of a sorted array, NOT the rank of each feature:
+    # [0, 2, 1, 1] ==> [1, 2, 3, 0] (so one can produce "2, 1, 1, 0")
+    # This is what we operate on, but it's not right. What we need instead is a function that gives us the rank of each feature:
+    # [0, 2, 1, 1] ==> [3, 0, 1, 2] (or the same but starting with 1)
+    # This way, we can apply the relprime formula directly. Right?
+    VRanking = myrank(v)
+    result = 1 - ((VRanking + 1) / (vLength(v) + 1.))
     offFeatures = (v == 0)
     result[offFeatures] = 0
     return result
@@ -111,7 +127,8 @@ def APinc(u,v):
     check(u,v)
     onFeatures = vLength(u)
     precs = precAtAllRanks(u,v)
-    URanking = myrank(u)
+    URanking = myrank(u) # watch out! If we do a random breaking of ties, we will need to make sure that the random order is the same for u and v
+    print
     print "precs"
     print precs
     print "rels"
