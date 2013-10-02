@@ -111,10 +111,10 @@ def relPrime(v):
     # This is what we operate on, but it's not right. What we need instead is a function that gives us the rank of each feature:
     # [0, 2, 1, 1] ==> [3, 0, 1, 2] (or the same but starting with 1)
     # This way, we can apply the relprime formula directly. Right?
-    VRanking = myrank(v)
+    VRanking = myrank(myrank(v))
+    print VRanking
     result = 1 - ((VRanking + 1) / (vLength(v) + 1.))
-    offFeatures = (v == 0)
-    result[offFeatures] = 0
+    #result[(v == 0)] = 0
     return result
 
 def precAtAllRanks(u,v):
@@ -128,14 +128,15 @@ def APinc(u,v):
     onFeatures = vLength(u)
     precs = precAtAllRanks(u,v)
     URanking = myrank(u) # watch out! If we do a random breaking of ties, we will need to make sure that the random order is the same for u and v
-    print
-    print "precs"
-    print precs
-    print "rels"
-    print relPrime(v)
-    rel = relPrime(v)[URanking]
-    print "rels after sorting"
-    print rel
+    # print
+    # print "precs"
+    # print precs
+    # print "rels"
+    # print relPrime(v)
+    #rel = relPrime(v)[URanking]
+    rel = relPrime(v)
+    # print "rels after sorting"
+    # print rel
     result = np.dot(precs[:onFeatures],rel[:onFeatures]) / onFeatures
     return result
 
@@ -206,4 +207,6 @@ u = data[0]; v = data[1]
 # print "ClarkeDE: 0.5"
 # print ClarkeDE(u,v)
 # print "balAPinc: still missing"
-#print APinc(u,v)
+print "APinc(u, v) =", APinc(u,v)
+print "APinc(u, u) =", APinc(u,u)
+print "APinc(v, v) =", APinc(v,v)
