@@ -1,0 +1,3772 @@
+@@ billion baht	central bank	0
+@@ billion baht	liquidity	0
+@@ billion francs	bill	0
+@@ billion pesos	argument	0
+@@ billion rupees	government security	0
+@@ percent	market price	0
+@@ trillion roubles	argument	0
+@@@ billion pesetas	central bank	0
+@@@ billion yen	liquidity	0
+@@@ million	surplus	0
+abduction	abuse	1
+ability	performance	1
+abolition	list	0
+about @@@ million zlotys	government security	0
+absence	list	0
+absentia	sentence	0
+abuse	abduction	0
+abuse	abuser	0
+abuse	activist	0
+abuse	allegation	0
+abuse	assassination	0
+abuse	assault	1
+abuse	atrocity	0
+abuse	beating	0
+abuse	behaviour	1
+abuse	bombing	0
+abuse	breach	1
+abuse	bribe	0
+abuse	bribery	0
+abuse	child abuse	0
+abuse	complaint	0
+abuse	conspiracy	0
+abuse	corruption	0
+abuse	crime	1
+abuse	criticism	0
+abuse	death	0
+abuse	discrimination	0
+abuse	disease	0
+abuse	drug trafficking	0
+abuse	drug	0
+abuse	embezzlement	0
+abuse	exploitation	0
+abuse	fraud	0
+abuse	gang	0
+abuse	hijacking	0
+abuse	infringement	1
+abuse	insider trading	0
+abuse	interference	0
+abuse	involvement	1
+abuse	irregularity	1
+abuse	kidnapping	0
+abuse	killing	0
+abuse	malpractice	0
+abuse	manipulation	0
+abuse	massacre	0
+abuse	misconduct	1
+abuse	molestation	0
+abuse	murder	0
+abuse	offence	1
+abuse	paedophilia	0
+abuse	porn	0
+abuse	pornography	0
+abuse	prostitution	0
+abuse	racism	0
+abuse	rape	0
+abuse	repression	0
+abuse	rigging	0
+abuse	robbery	0
+abuse	scandal	0
+abuse	sex	0
+abuse	sexual harassment	0
+abuse	shooting	0
+abuse	smuggling	0
+abuse	tax evasion	0
+abuse	terrorism	0
+abuse	theft	0
+abuse	torture	0
+abuse	trafficking	0
+abuse	violation	1
+abuse	violence	0
+abuse	war crime	0
+abuser	abuse	0
+access	treatment	0
+accord	programme	0
+account	liquidity	0
+account	loan	0
+accountability	liquidity	0
+accounting	management	0
+achievement	performance	1
+acquisition	loan	0
+acquisition	programme	0
+acquittal	ruling	1
+acquittal	sentence	0
+action	programme	0
+activist	abuse	0
+activist	federation	0
+activity	performance	1
+address	federation	0
+administration	central bank	0
+administration	government	1
+administration	management	1
+adoption	element	0
+advice	argument	0
+advice	treatment	0
+advisor	chairman	0
+advisories	federation	0
+aerospace	management	1
+affiliate	central bank	0
+agency	central bank	0
+agency	government	0
+agency	programme	0
+agenda	element	0
+agenda	list	1
+agenda	programme	1
+aggression	war	1
+agreement	bill	0
+agreement	programme	0
+agriculture	environment	1
+agriculture	management	0
+aid	loan	0
+aid	treatment	1
+air bag	argument	0
+air force	warplane	1
+air power	warplane	1
+aircraft carrier	warplane	1
+aircraft	warplane	1
+airline	central bank	0
+airline	government	0
+airline	warplane	0
+airplane	warplane	1
+airport	complex	1
+airport	town	0
+allegation	abuse	0
+ally	government	0
+ambassador	chairman	0
+amendment	bill	1
+analysis	ruling	0
+analyst	broker	0
+anger	war	0
+angioplasty	treatment	0
+animosity	gap	0
+announcement	element	0
+antibiotic	argument	0
+appeal	argument	0
+appeal	ruling	1
+appearance	argument	0
+appearance	match	0
+appliance	goods	1
+application	bill	0
+application	environment	0
+appointment	chairman	0
+approval	ruling	0
+arbitrage	gap	0
+arbitrageur	broker	0
+architect	element	0
+area	town	0
+argument	@@ billion pesos	0
+argument	@@ trillion roubles	0
+argument	advice	0
+argument	air bag	0
+argument	antibiotic	0
+argument	appeal	0
+argument	appearance	0
+argument	bias	0
+argument	challenge	0
+argument	claim	1
+argument	close call	0
+argument	complaint	1
+argument	concensus	0
+argument	concern	0
+argument	confusion	0
+argument	contempt	0
+argument	controversy	1
+argument	criticism	1
+argument	defendant	0
+argument	determination	0
+argument	dispute	1
+argument	distinction	1
+argument	divide	0
+argument	doubt	1
+argument	due process	0
+argument	evidence	1
+argument	excuse	1
+argument	expectation	0
+argument	file	0
+argument	flexibility	0
+argument	foundation	0
+argument	framework	0
+argument	hearing	0
+argument	hope	0
+argument	ideology	0
+argument	inconsistency	0
+argument	judge	0
+argument	jury	0
+argument	lawsuit	1
+argument	middlemen	0
+argument	misgiving	0
+argument	mistrial	0
+argument	motion	0
+argument	notice	0
+argument	odds	0
+argument	passage	0
+argument	petition	0
+argument	picture	0
+argument	plaintiff	0
+argument	pledge	0
+argument	premise	1
+argument	presence	0
+argument	promise	0
+argument	prosecutor	0
+argument	prospectus	0
+argument	question mark	0
+argument	question	1
+argument	questioning	0
+argument	ramification	0
+argument	reason	1
+argument	reassessment	0
+argument	remark	0
+argument	room	0
+argument	scenario	0
+argument	scope	0
+argument	showing	0
+argument	skirmish	1
+argument	speech	1
+argument	state of war	0
+argument	suit	0
+argument	summary judgment	0
+argument	testimony	1
+argument	theory	1
+argument	uncertainty	0
+argument	verdict	0
+argument	willingness	0
+argument	witness	0
+argument	wrangle	1
+argument	wrangling	1
+argument	wrongdoing	0
+arm	warplane	0
+armour	warplane	0
+army base	warplane	0
+army	central bank	0
+army	government	0
+army	war	0
+arrangement	programme	1
+arrears	loan	0
+arrest	sentence	0
+article	ruling	0
+artillery	warplane	0
+aspect	element	1
+aspiration	market price	0
+assassination	abuse	1
+assault	abuse	1
+assault	war	1
+assembly	federation	0
+assessment	element	0
+asset value	market price	1
+asset	loan	1
+asset	management	0
+assistance	loan	0
+assistance	programme	0
+assistance	treatment	1
+association	federation	1
+assurance	ruling	0
+assurance	treatment	0
+atrocity	abuse	1
+attack	war	1
+attention	liquidity	0
+attitude	environment	1
+auditor	broker	0
+austerity	privatisation	0
+authority	central bank	0
+authority	government	0
+authorization	market price	0
+automakers	federation	0
+automation	treatment	0
+avail	liquidity	0
+availability	liquidity	0
+b share	government security	0
+backer	element	0
+background	element	0
+backup	treatment	0
+bad debt	loan	1
+balance of payments	liquidity	0
+balance	gap	0
+balance	surplus	0
+ball	match	0
+ballot	list	1
+ban	war	0
+bank bill	bill	1
+bank deposit	government security	0
+bank deposit	loan	0
+bank discount	market price	0
+bank	broker	0
+bank	central bank	0
+bank	government	1
+banker	broker	0
+banking analyst	broker	0
+banking system	central bank	1
+banking	management	1
+barrier	gap	0
+barrow	government security	0
+base	town	0
+basis	list	0
+batter	match	1
+battle	match	1
+battle	war	1
+bean	goods	1
+bearishness	market price	0
+beating	abuse	1
+bedrock	element	1
+behaviour	abuse	0
+belly	government security	0
+bias	argument	0
+bias	gap	0
+bid price	market price	0
+bill	@@ billion francs	0
+bill	agreement	0
+bill	amendment	0
+bill	application	0
+bill	bank bill	1
+bill	bond	0
+bill	budget	0
+bill	certificate	0
+bill	constitution	0
+bill	deal	1
+bill	directive	1
+bill	document	1
+bill	draft	0
+bill	effort	1
+bill	government bond	0
+bill	government security	0
+bill	law	1
+bill	legislation	1
+bill	loan	0
+bill	market reform	0
+bill	matter	1
+bill	maturity	0
+bill	measure	1
+bill	merger	0
+bill	motion	1
+bill	note	1
+bill	package	0
+bill	pact	0
+bill	page	1
+bill	paper	1
+bill	payment	0
+bill	plan	1
+bill	policy	1
+bill	process	1
+bill	program	1
+bill	programme	0
+bill	programme	1
+bill	proposal	1
+bill	provision	0
+bill	reform	0
+bill	regulation	1
+bill	repo	0
+bill	repos	0
+bill	resolution	0
+bill	revenue	0
+bill	rule	1
+bill	scheme	1
+bill	settlement	1
+bill	subsidy	0
+bill	tax law	0
+bill	text	1
+bill	treasury bill	0
+bill	treasury bond	0
+bill	treasury note	0
+bill	treaty	0
+bill	yield	0
+bishop	federation	0
+blame	sentence	0
+blood	liquidity	0
+bloodshed	war	0
+board member	chairman	0
+board	central bank	0
+board	list	1
+body	central bank	0
+bomb	warplane	0
+bomber	warplane	1
+bombing	abuse	0
+bombing	war	0
+bond trader	broker	1
+bond	bill	1
+bond	loan	0
+book value	market price	1
+border	town	0
+borrowing	liquidity	0
+borrowing	loan	1
+borrowing	surplus	0
+bother	sentence	0
+bourse	list	0
+boycott	sentence	0
+bps	warplane	1
+breach	abuse	1
+breakdown	element	0
+bribe	abuse	1
+bribery	abuse	0
+broker	analyst	0
+broker	arbitrageur	0
+broker	auditor	0
+broker	bank	0
+broker	banker	0
+broker	banking analyst	0
+broker	bond trader	0
+broker	brokerage firm	0
+broker	brokerage house	0
+broker	brokerage	0
+broker	business leader	0
+broker	businessmen	1
+broker	chartist	0
+broker	commercial bank	0
+broker	commodity brokerage	0
+broker	dealer	1
+broker	deferreds	0
+broker	diplomat	0
+broker	economist	1
+broker	executive	0
+broker	expert	1
+broker	exporter	0
+broker	finance minister	0
+broker	financial institution	0
+broker	floor broker	0
+broker	forecaster	0
+broker	foreigner	0
+broker	forwarder	1
+broker	futures price	0
+broker	government officials	0
+broker	house	0
+broker	industrialist	0
+broker	industry analyst	0
+broker	institution	0
+broker	insurer	0
+broker	investment analyst	0
+broker	investment banker	0
+broker	investor	1
+broker	journalist	0
+broker	lender	0
+broker	lifter	0
+broker	manager	0
+broker	market analyst	0
+broker	market maker	0
+broker	market watcher	0
+broker	marketmaker	0
+broker	money dealer	0
+broker	moody's	0
+broker	mutual fund	0
+broker	official	0
+broker	operator	0
+broker	politician	0
+broker	power broker	0
+broker	producer	0
+broker	refiner	0
+broker	securities firm	0
+broker	shareholder	0
+broker	source	0
+broker	speculator	1
+broker	stockbroker	0
+broker	stockholder	1
+broker	television station	0
+broker	trader	1
+broker	wall street analyst	0
+brokerage firm	broker	1
+brokerage house	broker	1
+brokerage	broker	1
+budget deficit	gap	1
+budget deficit	surplus	0
+budget	bill	0
+budget	privatisation	0
+budget	programme	0
+budget	surplus	0
+building material	management	0
+building	complex	1
+buildup	warplane	0
+bullion	government security	0
+buoyancy	liquidity	1
+burden	sentence	0
+bureau	federation	0
+business condition	environment	1
+business condition	performance	1
+business leader	broker	0
+businessmen	broker	0
+butane	government security	0
+buy recommendation	market price	1
+buy	list	0
+cabinet	central bank	1
+cabinet	government	1
+camp	town	0
+campaign	list	0
+campaign	programme	1
+campaign	war	1
+cancer cell	treatment	0
+candidate	list	0
+capacity	liquidity	0
+capital expenditure	liquidity	1
+capital gain	surplus	1
+capital	town	1
+capitalisation	liquidity	0
+captain	chairman	0
+car	goods	1
+care	treatment	1
+carrier	warplane	1
+carryover	surplus	0
+cash basis	government security	0
+cash dividend	market price	0
+cash	liquidity	1
+cash	loan	0
+cashmere	goods	1
+castration	treatment	0
+cattle	government security	0
+ceasefire	federation	0
+cement	goods	1
+census	market price	0
+centerpiece	element	1
+central bank	@@ billion baht	0
+central bank	@@@ billion pesetas	0
+central bank	administration	1
+central bank	affiliate	0
+central bank	agency	1
+central bank	airline	0
+central bank	army	0
+central bank	authority	1
+central bank	bank	1
+central bank	banking system	1
+central bank	board	0
+central bank	body	1
+central bank	cabinet	1
+central bank	commercial bank	0
+central bank	commission	0
+central bank	committee	1
+central bank	company	0
+central bank	consortium	0
+central bank	council	1
+central bank	court	0
+central bank	currency	0
+central bank	deflator	0
+central bank	department	1
+central bank	deputy	0
+central bank	dinar	0
+central bank	financial institution	1
+central bank	firm	0
+central bank	forerunner	0
+central bank	government	1
+central bank	group of @@	0
+central bank	hawkish	0
+central bank	intermediary	0
+central bank	investor	0
+central bank	judge	0
+central bank	last week	0
+central bank	mine	0
+central bank	ministry	1
+central bank	nation	1
+central bank	office	1
+central bank	organisation	1
+central bank	overseer	1
+central bank	parliament	1
+central bank	party	0
+central bank	police	0
+central bank	reason	0
+central bank	refiner	0
+central bank	regulator	1
+central bank	republic	0
+central bank	room	0
+central bank	scope	0
+central bank	secret service	0
+central bank	seven billion rupiah	0
+central bank	state government	1
+central bank	state	0
+central bank	textile mill	0
+central bank	today	0
+central bank	trade union	0
+central bank	treasury	0
+central bank	two to five percent	0
+central bank	union	0
+central bank	unit	1
+central bank	utility	0
+central bank	year end	0
+central bank	yesterday	0
+centre	complex	1
+centre	town	1
+centrist	ruling	0
+century	match	0
+certificate of deposit	government security	0
+certificate	bill	1
+certificate	loan	0
+chain	complex	0
+chairman	advisor	0
+chairman	ambassador	0
+chairman	appointment	0
+chairman	board member	0
+chairman	captain	0
+chairman	chairmen	1
+chairman	chairwoman	0
+chairman	chief executive officer	0
+chairman	chief executive	1
+chairman	chief financial officer	0
+chairman	chief operating officer	0
+chairman	chief	1
+chairman	coach	0
+chairman	commander	0
+chairman	commissioner	0
+chairman	committee	0
+chairman	creation	0
+chairman	deputy chairman	0
+chairman	deputy	0
+chairman	director	0
+chairman	editor	0
+chairman	executive director	0
+chairman	executive vice president	0
+chairman	executive	0
+chairman	foreign minister	0
+chairman	founder	0
+chairman	general manager	0
+chairman	general	0
+chairman	governor	0
+chairman	head of state	0
+chairman	head	1
+chairman	leader	1
+chairman	manager	0
+chairman	managing director	0
+chairman	mayor	0
+chairman	member	0
+chairman	minister	0
+chairman	officer	1
+chairman	owner	0
+chairman	president	0
+chairman	representative	1
+chairman	secretary	0
+chairman	senator	0
+chairman	senior vice president	0
+chairman	speaker	0
+chairman	spokesman	0
+chairman	treasurer	0
+chairman	vice chairman	0
+chairman	vice president	0
+chairmen	chairman	1
+chairwoman	chairman	1
+challenge	argument	0
+chamber of commerce	federation	0
+chamber	federation	0
+championship	match	0
+channel	complex	0
+characteristic	element	1
+chartist	broker	0
+check	treatment	0
+checkpoint	town	0
+checkup	treatment	0
+chemical	goods	0
+chemical	management	0
+chief executive officer	chairman	0
+chief executive	chairman	1
+chief financial officer	chairman	0
+chief justice	federation	0
+chief of staff	federation	0
+chief operating officer	chairman	0
+chief	chairman	1
+chief	government	1
+child abuse	abuse	1
+choice	treatment	0
+chun	sentence	0
+chunk	element	1
+church	federation	0
+cif	market price	0
+circumstance	treatment	0
+city council	federation	0
+city	town	1
+civil war	war	1
+claim	argument	1
+clash	gap	1
+clash	match	0
+clash	war	1
+class	government security	0
+clearance	treatment	0
+climate	environment	1
+close call	argument	0
+closeness	market price	0
+closing price	market price	1
+closing price	ruling	0
+clothing	goods	1
+club	match	0
+coach	chairman	0
+coal	goods	1
+coalition	federation	0
+coalition	government	1
+coast	town	0
+cocoa bean	government security	0
+coffee	goods	1
+college	federation	0
+colony	town	0
+command	warplane	0
+commander	chairman	0
+comment	ruling	0
+commercial bank	broker	1
+commercial bank	central bank	0
+commercial paper	government security	0
+commercial paper	loan	0
+commission	central bank	0
+commission	federation	0
+commission	government	0
+commission	list	1
+commissioner	chairman	0
+committee	central bank	0
+committee	chairman	0
+commodity brokerage	broker	1
+commodity brokerage	federation	0
+commodity	goods	1
+common shares	government security	0
+common wheat	goods	1
+communication	environment	1
+communication	management	0
+communist	ruling	0
+community	government	0
+community	town	1
+company	central bank	0
+comparison	ruling	1
+competition	liquidity	0
+competition	match	1
+competition	performance	0
+competitive	complex	0
+competitiveness	gap	0
+competitiveness	liquidity	0
+complaint	abuse	1
+complaint	argument	1
+completion	element	0
+complex	airport	1
+complex	building	1
+complex	centre	1
+complex	chain	0
+complex	channel	0
+complex	competitive	0
+complex	construction	1
+complex	controversial	0
+complex	crater	0
+complex	dam	1
+complex	development	1
+complex	difficult	1
+complex	east	0
+complex	entire	0
+complex	environmental	0
+complex	equipment	0
+complex	exploration	0
+complex	facility	0
+complex	factory	1
+complex	furnace	1
+complex	hotel	0
+complex	infrastructure	0
+complex	internal	0
+complex	lighthouse	0
+complex	location	1
+complex	metropolis	0
+complex	mill	1
+complex	mine	1
+complex	office	0
+complex	operator	0
+complex	pipeline	0
+complex	plant	1
+complex	police headquarters	0
+complex	port	1
+complex	power plant	1
+complex	power station	1
+complex	precipice	0
+complex	processing	0
+complex	project	1
+complex	property	0
+complex	proposed	0
+complex	reactor	1
+complex	refinery	1
+complex	resort	0
+complex	runway	1
+complex	sanctuary	0
+complex	sector	0
+complex	separate	0
+complex	ship	0
+complex	simple	0
+complex	site	1
+complex	smelter	1
+complex	space	0
+complex	station	1
+complex	submarine	0
+complex	successful	0
+complex	terminal	1
+complex	tourism	0
+complex	tower	0
+complex	town	1
+complex	transitional	0
+complex	unit	0
+complex	venture	0
+complex	village	0
+component	element	1
+component	goods	0
+compound	treatment	0
+compromise	ruling	0
+comptroller	federation	0
+computer	management	0
+comrade	warplane	0
+concensus	argument	0
+concern	argument	0
+concession	ruling	0
+condition	environment	1
+condition	performance	0
+condominium	government security	0
+confederation	federation	1
+confidence	liquidity	0
+conflict	gap	1
+conflict	war	1
+confrontation	war	1
+confusion	argument	0
+conglomerate	list	1
+conservative	ruling	0
+consideration	element	0
+consolidation	privatisation	0
+consortium	central bank	0
+consortium	federation	0
+consortium	government	0
+consortium	list	0
+conspiracy	abuse	0
+constitution	bill	1
+constraint	gap	0
+constraint	surplus	0
+construction	complex	1
+construction	management	1
+construction	privatisation	0
+consultancy	federation	0
+consumer goods	goods	1
+consumer loan	loan	1
+consumption	surplus	0
+contempt	argument	0
+contest	match	1
+continuation	element	0
+control	management	1
+controversial	complex	0
+controversy	argument	1
+convergence	privatisation	0
+conversion price	market price	1
+convict	sentence	0
+conviction	ruling	1
+conviction	sentence	0
+cooperation	gap	0
+cooperation	privatisation	0
+cooperation	programme	0
+cooperative	federation	1
+copper	goods	1
+copy	list	1
+corn	goods	1
+cornerstone	element	1
+coronary artery	treatment	0
+corporates	government security	0
+correction	gap	0
+corruption	abuse	1
+cost cutting	privatisation	0
+cost	surplus	0
+cotton	goods	1
+council	central bank	0
+council	federation	0
+council	government	1
+count	sentence	0
+country	government	0
+country	town	0
+county	town	0
+coup	war	0
+course	element	1
+court	central bank	0
+court	government	0
+coverage	list	0
+coverage	treatment	0
+crackdown	war	0
+crater	complex	0
+creation	chairman	0
+creation	privatisation	0
+credit card	government security	0
+credit	liquidity	0
+credit	loan	1
+creditworthiness	list	0
+crew member	warplane	0
+crew	warplane	1
+cricket	match	0
+crime	abuse	1
+crime	war	0
+criminal court	sentence	0
+criminality	element	0
+crisis	war	0
+criterion	sentence	0
+criticism	abuse	0
+criticism	argument	0
+criticism	element	0
+crop	surplus	0
+crossroad	federation	0
+crown	surplus	0
+crude oil	goods	1
+crude	goods	0
+cull	privatisation	0
+curb	sentence	0
+currency	central bank	0
+current account	surplus	0
+custom	federation	0
+customer service	management	0
+customer service	treatment	1
+dam	complex	1
+damage	loan	0
+data	performance	0
+database	management	0
+deal	bill	0
+deal	programme	0
+dealer	broker	0
+death penalty	sentence	1
+death	abuse	0
+debate	war	0
+debenture	government security	0
+debenture	loan	1
+debt instrument	government security	1
+debt security	government security	0
+debt security	loan	1
+debt	loan	1
+debt	surplus	0
+decision	ruling	0
+decline	performance	0
+decline	surplus	0
+decoder	treatment	0
+deductibles	market price	1
+defeat	match	0
+defection	federation	0
+defence	management	0
+defendant	argument	0
+deferreds	broker	0
+deferreds	market price	0
+deficit	gap	1
+deficit	surplus	0
+deflator	central bank	1
+delegation	federation	0
+delegation	list	1
+demand	performance	0
+demerger	privatisation	0
+democrat	warplane	0
+democratic party	sentence	0
+department	central bank	0
+department	federation	0
+department	management	1
+deposit	liquidity	0
+deposit	loan	0
+depreciation	liquidity	0
+deputy chairman	chairman	0
+deputy	central bank	0
+deputy	chairman	0
+derivative	government security	0
+descent	market price	0
+detail	element	1
+detail	list	0
+detection	treatment	0
+detention	ruling	1
+detention	sentence	1
+determinant	element	1
+determination	argument	0
+devaluation	liquidity	0
+development	complex	1
+development	management	0
+development	performance	1
+development	programme	0
+device	treatment	0
+diagnosis	treatment	0
+died	treatment	0
+diesel	goods	1
+difference	gap	1
+difference	war	0
+differential	gap	1
+differential	market price	0
+difficult	complex	1
+dinar	central bank	0
+diplomat	broker	0
+direction	environment	0
+directive	bill	1
+directive	ruling	1
+director	chairman	0
+director	management	0
+discipline	gap	0
+discrepancy	gap	1
+discrimination	abuse	1
+discussion	ruling	0
+disease	abuse	0
+dismissal	sentence	0
+displacement	surplus	0
+disposal	privatisation	0
+dispute	argument	1
+dispute	war	1
+distinction	argument	0
+distortion	liquidity	0
+distribution	management	1
+distribution	treatment	0
+district	town	1
+diversification	privatisation	0
+divestment	privatisation	0
+divide	argument	0
+dividend rate	market price	1
+document	bill	0
+document	ruling	0
+dominant	ruling	1
+doubleheader	match	1
+doubt	argument	0
+downtrend	market price	1
+dozen	list	1
+draft	bill	1
+drilling	privatisation	0
+drive	programme	0
+drought	liquidity	0
+drug maker	federation	0
+drug trafficking	abuse	1
+drug	abuse	0
+drug	goods	1
+drug	treatment	1
+drug	war	0
+due process	argument	0
+earning per share	gap	0
+earning per share	surplus	0
+earnings growth	performance	1
+earnings	performance	1
+earnings	surplus	0
+east	complex	0
+echelon	sentence	0
+economic condition	environment	0
+economic condition	market price	0
+economic policy	environment	1
+economic system	environment	1
+economics department	federation	0
+economist	broker	0
+economy	environment	0
+editor	chairman	0
+education	environment	1
+education	privatisation	0
+education	treatment	0
+efficiency	environment	0
+efficiency	liquidity	0
+efficiency	performance	1
+effort	bill	0
+effort	programme	0
+election commission	federation	0
+election	privatisation	0
+electricity	goods	0
+electronics	goods	1
+element	adoption	0
+element	agenda	0
+element	announcement	0
+element	architect	0
+element	aspect	1
+element	assessment	0
+element	backer	0
+element	background	0
+element	bedrock	0
+element	breakdown	0
+element	centerpiece	0
+element	characteristic	1
+element	chunk	1
+element	completion	0
+element	component	1
+element	consideration	0
+element	continuation	0
+element	cornerstone	1
+element	course	0
+element	criminality	0
+element	criticism	0
+element	detail	1
+element	determinant	1
+element	enactment	0
+element	endorsement	0
+element	evidence	0
+element	factor	1
+element	fate	0
+element	favor	0
+element	favour	0
+element	feature	1
+element	framework	0
+element	functionality	0
+element	impact	0
+element	implementation	0
+element	inconsistency	0
+element	indication	0
+element	ingredient	1
+element	kind	0
+element	lack	0
+element	legality	0
+element	loosening	0
+element	modality	0
+element	nature	1
+element	package	0
+element	part	1
+element	participation	0
+element	path	0
+element	phase	1
+element	plank	1
+element	portion	1
+element	principle	0
+element	probable cause	0
+element	purpose	0
+element	reevaluation	0
+element	rejection	0
+element	review	0
+element	sign	0
+element	size	0
+element	step	1
+element	tenet	0
+element	text	0
+element	theme	0
+element	thing	1
+element	topic	0
+element	transferability	0
+element	type	0
+element	understanding	0
+element	version	0
+eligibility	sentence	0
+embassy	federation	0
+embezzlement	abuse	1
+empire	federation	1
+employment	environment	0
+enactment	element	0
+enclave	town	1
+endorsement	element	0
+energy	environment	0
+energy	goods	0
+energy	management	0
+engineering	management	1
+entertainment	management	0
+entire	complex	0
+environment	agriculture	0
+environment	application	0
+environment	attitude	0
+environment	business condition	0
+environment	climate	1
+environment	communication	0
+environment	condition	1
+environment	direction	0
+environment	economic condition	0
+environment	economic policy	0
+environment	economic system	0
+environment	economy	0
+environment	education	0
+environment	efficiency	0
+environment	employment	0
+environment	energy	0
+environment	exchange rate	0
+environment	expectation	0
+environment	factor	1
+environment	financing	0
+environment	fishing	0
+environment	framework	0
+environment	fundamental	0
+environment	health	0
+environment	housing	0
+environment	image	0
+environment	implication	0
+environment	infrastructure	0
+environment	logistics	0
+environment	market condition	0
+environment	marketplace	0
+environment	mining	0
+environment	mix	0
+environment	opportunity	0
+environment	outlook	1
+environment	pattern	1
+environment	performance	0
+environment	picture	1
+environment	policy	0
+environment	profit margin	0
+environment	prospect	1
+environment	quality of life	1
+environment	quality	0
+environment	recreation	0
+environment	regime	0
+environment	relation	0
+environment	reliability	0
+environment	research	0
+environment	safety	0
+environment	sentiment	0
+environment	situation	1
+environment	skill	0
+environment	software	0
+environment	stability	0
+environment	strategy	0
+environment	structure	1
+environment	system	1
+environment	telecommunication	0
+environment	tool	0
+environment	transport	0
+environment	trend	0
+environment	urban area	0
+environmental	complex	0
+equality	gap	0
+equipment	complex	0
+equipment	goods	1
+equity investment	loan	0
+equity market	market price	1
+equity	loan	0
+eradication	privatisation	0
+establishment	federation	0
+establishment	privatisation	0
+event	match	1
+evidence	argument	1
+evidence	element	0
+excess	surplus	1
+exchange rate	environment	0
+exchange rate	liquidity	0
+exchange rate	market price	1
+excuse	argument	1
+executive director	chairman	0
+executive vice president	chairman	0
+executive	broker	0
+executive	chairman	0
+executive	management	1
+exercise price	market price	0
+expectation	argument	0
+expectation	environment	0
+expectation	performance	0
+expenditure	gap	0
+expenditure	liquidity	1
+expert	broker	0
+expertise	management	0
+exploitation	abuse	1
+exploration	complex	0
+explosive	warplane	0
+exporter	broker	0
+extension	sentence	0
+extra time	match	0
+extraction	treatment	1
+extradition	sentence	0
+fabrication	treatment	0
+face amount	surplus	0
+face value	market price	1
+facility	complex	0
+facility	loan	0
+faction	government	0
+factor	element	1
+factor	environment	0
+factory	complex	1
+fare	market price	1
+fate	element	0
+favor	element	0
+favour	element	0
+favour	list	0
+feature	element	1
+federal government	government	1
+federation	activist	0
+federation	address	0
+federation	advisories	0
+federation	assembly	1
+federation	association	1
+federation	automakers	0
+federation	bishop	0
+federation	bureau	1
+federation	ceasefire	0
+federation	chamber of commerce	1
+federation	chamber	1
+federation	chief justice	0
+federation	chief of staff	1
+federation	church	0
+federation	city council	0
+federation	coalition	0
+federation	college	0
+federation	commission	1
+federation	commodity brokerage	0
+federation	comptroller	0
+federation	confederation	1
+federation	consortium	0
+federation	consultancy	0
+federation	cooperative	0
+federation	council	1
+federation	crossroad	0
+federation	custom	0
+federation	defection	0
+federation	delegation	0
+federation	department	0
+federation	drug maker	0
+federation	economics department	0
+federation	election commission	0
+federation	embassy	1
+federation	empire	0
+federation	establishment	1
+federation	foundation	0
+federation	founding	0
+federation	gendarmerie	0
+federation	governor	1
+federation	house of representatives	0
+federation	institute	1
+federation	investment company	0
+federation	leader	0
+federation	legislator	1
+federation	legislature	1
+federation	liberation	0
+federation	mayor	0
+federation	ministry	0
+federation	organisation	0
+federation	panel	0
+federation	party	0
+federation	political party	0
+federation	prefect	1
+federation	premier	1
+federation	presidency	1
+federation	president	0
+federation	proclamation	0
+federation	promoter	0
+federation	representative	0
+federation	republic	0
+federation	rolling mill	0
+federation	secretary	1
+federation	senate	1
+federation	state legislature	0
+federation	steering committee	1
+federation	trade union	0
+federation	union	1
+federation	university	0
+federation	wing	0
+fee	loan	0
+feuding	ruling	0
+fight	war	1
+fighting	war	1
+figure	gap	0
+figure	performance	0
+figure	surplus	0
+file	argument	0
+file	ruling	0
+final	match	0
+finance minister	broker	0
+finance	management	1
+financial condition	performance	1
+financial institution	broker	0
+financial institution	central bank	0
+financing	environment	1
+financing	loan	1
+financing	management	1
+financing	treatment	0
+fine	sentence	0
+firm	central bank	0
+firming	surplus	0
+first mortgage	loan	1
+fiscal @@@@	loan	0
+fishing	environment	1
+fixture	match	0
+flexibility	argument	0
+flexibility	liquidity	1
+float	privatisation	0
+flood	war	0
+floor broker	broker	1
+flotation	privatisation	0
+flow	liquidity	1
+flow	surplus	0
+fob	market price	1
+food	goods	1
+foodstuff	goods	1
+footing	performance	0
+force	war	0
+force	warplane	1
+forecaster	broker	0
+foreign exchange market	government security	0
+foreign exchange	liquidity	0
+foreign minister	chairman	0
+foreigner	broker	0
+forerunner	central bank	0
+forex	government security	0
+form	treatment	0
+former	ruling	0
+forwarder	broker	1
+forwarders	warplane	0
+foundation	argument	0
+foundation	federation	0
+founder	chairman	0
+founding	federation	0
+fourth	match	0
+frame	treatment	0
+framework	argument	0
+framework	element	0
+framework	environment	0
+fraud	abuse	1
+freighter	warplane	0
+frigate	warplane	0
+from	ruling	0
+fuel oil	goods	1
+fuel	goods	1
+functionality	element	0
+fund	liquidity	0
+fund	loan	1
+fundamental	environment	1
+fundamental	performance	0
+funding	liquidity	0
+funding	loan	1
+funding	management	1
+funding	programme	0
+funding	treatment	0
+furnace	complex	1
+futures price	broker	0
+futures price	market price	1
+gain	performance	1
+game	match	1
+gang	abuse	0
+gap	animosity	0
+gap	arbitrage	0
+gap	balance	0
+gap	barrier	0
+gap	bias	0
+gap	budget deficit	0
+gap	clash	0
+gap	competitiveness	0
+gap	conflict	1
+gap	constraint	0
+gap	cooperation	0
+gap	correction	0
+gap	deficit	1
+gap	difference	1
+gap	differential	1
+gap	discipline	0
+gap	discrepancy	1
+gap	earning per share	0
+gap	equality	0
+gap	expenditure	0
+gap	figure	0
+gap	growth	0
+gap	gulf	1
+gap	headstart	0
+gap	hole	1
+gap	imbalance	1
+gap	improvement	1
+gap	inflation	0
+gap	inflow	0
+gap	interest rate	0
+gap	link	0
+gap	linkage	0
+gap	margin	0
+gap	money supply	0
+gap	net profit	0
+gap	number one	0
+gap	objective	0
+gap	pact	0
+gap	price tag	0
+gap	profits	0
+gap	projection	0
+gap	ratio	1
+gap	receipt	0
+gap	relation	0
+gap	relationship	0
+gap	repayment	0
+gap	resistance	0
+gap	revenue	0
+gap	reversal	0
+gap	rivalry	0
+gap	separation	1
+gap	shortage	0
+gap	shortfall	1
+gap	slide	0
+gap	spending	0
+gap	spread	1
+gap	squeeze	0
+gap	stopgap	0
+gap	surplus	0
+gap	target	0
+gap	tie	0
+gap	tightening	0
+gap	trade deficit	0
+gap	trade surplus	0
+gap	unemployment	0
+gap	upturn	0
+gap	vacancy	0
+gap	void	1
+gas price	market price	0
+gas	goods	1
+gasoline	goods	1
+gathering	treatment	0
+gendarmerie	federation	0
+general election	match	0
+general election	privatisation	0
+general manager	chairman	0
+general	chairman	0
+gilt	government security	0
+glass	goods	1
+goal	match	0
+gold	goods	1
+goods	appliance	0
+goods	bean	0
+goods	car	0
+goods	cashmere	0
+goods	cement	0
+goods	chemical	0
+goods	clothing	0
+goods	coal	1
+goods	coffee	0
+goods	commodity	1
+goods	common wheat	0
+goods	component	1
+goods	consumer goods	0
+goods	copper	0
+goods	corn	0
+goods	cotton	0
+goods	crude oil	0
+goods	crude	0
+goods	diesel	0
+goods	drug	0
+goods	electricity	0
+goods	electronics	0
+goods	energy	0
+goods	equipment	0
+goods	food	0
+goods	foodstuff	0
+goods	fuel oil	0
+goods	fuel	0
+goods	gas	0
+goods	gasoline	0
+goods	glass	0
+goods	gold	0
+goods	grain	0
+goods	import	0
+goods	item	1
+goods	machinery	0
+goods	material	1
+goods	medicine	0
+goods	metal	0
+goods	natural gas	0
+goods	nickel	0
+goods	oil	0
+goods	palm oil	0
+goods	petrochemical	0
+goods	pork	0
+goods	product	1
+goods	raw material	0
+goods	rice	0
+goods	semiconductor	0
+goods	steel	0
+goods	sugar	0
+goods	tea	0
+goods	textile	0
+goods	timber	0
+goods	toy	0
+goods	truck	0
+goods	utensil	0
+goods	vehicle	0
+goods	water	0
+goods	wheat	0
+goods	wool	0
+governing	ruling	1
+government bond	bill	1
+government bond	government security	1
+government bond	loan	0
+government debt	government security	1
+government office	government security	0
+government official	government security	0
+government officials	broker	0
+government revenue	government security	0
+government security	@@ billion rupees	0
+government security	about @@@ million zlotys	0
+government security	b share	0
+government security	bank deposit	0
+government security	barrow	0
+government security	belly	0
+government security	bill	1
+government security	bullion	0
+government security	butane	0
+government security	cash basis	0
+government security	cattle	0
+government security	certificate of deposit	0
+government security	class	0
+government security	cocoa bean	0
+government security	commercial paper	1
+government security	common shares	0
+government security	condominium	0
+government security	corporates	0
+government security	credit card	0
+government security	debenture	0
+government security	debt instrument	0
+government security	debt security	0
+government security	derivative	0
+government security	foreign exchange market	0
+government security	forex	0
+government security	gilt	0
+government security	government bond	1
+government security	government debt	0
+government security	government office	0
+government security	government official	0
+government security	government revenue	0
+government security	government subsidy	0
+government security	hedging	1
+government security	indian capital	0
+government security	instrument	1
+government security	interbank	0
+government security	interdealer	0
+government security	japanese government bond	0
+government security	japanese government bonds	0
+government security	kerb	0
+government security	lamb	0
+government security	lysine	0
+government security	maturing	0
+government security	memory chip	0
+government security	minority interest	0
+government security	money market	0
+government security	municipal bond	0
+government security	naphtha	0
+government security	nearly eight percent	0
+government security	note	1
+government security	notes	1
+government security	olein	0
+government security	oversold	0
+government security	paper	0
+government security	peso	0
+government security	preferred stock	0
+government security	put option	0
+government security	rangebound	0
+government security	repos	0
+government security	savings bond	1
+government security	sterling	0
+government security	stock option	0
+government security	supercomputers	0
+government security	swap	0
+government security	telephone company	0
+government security	treasury bill	1
+government security	treasury bond	1
+government security	treasury stock	0
+government security	unlisted security	0
+government security	unlisted stock	0
+government security	warehousing	0
+government security	warrant	1
+government subsidy	government security	0
+government	administration	1
+government	agency	0
+government	airline	0
+government	ally	0
+government	army	0
+government	authority	1
+government	bank	0
+government	cabinet	1
+government	central bank	0
+government	chief	1
+government	coalition	0
+government	commission	0
+government	community	1
+government	consortium	0
+government	council	1
+government	country	0
+government	court	0
+government	faction	0
+government	federal government	0
+government	governor	1
+government	group	1
+government	institution	1
+government	leader	1
+government	member	1
+government	minister	1
+government	ministry	0
+government	neighbour	0
+government	opposition party	0
+government	opposition	0
+government	parliament	0
+government	partner	0
+government	party	0
+government	police	0
+government	political party	0
+government	politician	0
+government	predecessor	0
+government	premier	1
+government	presidency	0
+government	president	0
+government	rebel	0
+government	regime	1
+government	regulator	0
+government	republic	0
+government	side	0
+government	state	1
+government	union	0
+governor	chairman	0
+governor	federation	0
+governor	government	1
+grain	goods	1
+grant	loan	0
+group of @@	central bank	0
+group	government	0
+growth prospect	performance	1
+growth rate	market price	0
+growth rate	surplus	0
+growth	gap	0
+growth	performance	1
+guideline	ruling	0
+gulf	gap	1
+gun	warplane	0
+gunfight	war	0
+gunmen	warplane	0
+half	list	0
+handful	list	0
+handling	treatment	1
+harvest	surplus	0
+hawkish	central bank	0
+head of state	chairman	0
+head	chairman	1
+head	list	0
+headstart	gap	0
+health	environment	0
+health	privatisation	0
+hearing	argument	0
+hearing	ruling	1
+hedging	government security	0
+helicopter	warplane	0
+higher education	treatment	0
+hijacker	warplane	0
+hijacking	abuse	1
+hole	gap	1
+hole	match	0
+holy city	town	1
+hope	argument	0
+hospital	town	0
+host	list	0
+hostility	war	1
+hotel	complex	0
+hotel	town	0
+hour	sentence	0
+house of representatives	federation	0
+house	broker	0
+housing	environment	1
+housing	loan	0
+humanity	sentence	0
+hundred	list	1
+hunt	sentence	0
+identification	treatment	0
+ideology	argument	0
+image	environment	0
+imbalance	gap	1
+immigration	privatisation	0
+impact	element	0
+impeachment	sentence	1
+implementation	element	0
+implementation	privatisation	0
+implication	environment	0
+import	goods	0
+import	surplus	0
+importance	list	0
+imprisonment	sentence	1
+improvement	gap	0
+improvement	performance	1
+incentive	liquidity	0
+incentive	programme	0
+incidence	treatment	0
+incident	war	0
+income	performance	1
+inconsistency	argument	0
+inconsistency	element	0
+incumbent	ruling	0
+index	list	1
+indian capital	government security	0
+indian capital	town	1
+indication	element	0
+indictment	ruling	0
+indictment	sentence	0
+industrialist	broker	0
+industry analyst	broker	0
+inflation rate	surplus	0
+inflation	gap	1
+inflation	surplus	0
+inflow	gap	0
+inflow	liquidity	0
+inflow	surplus	0
+influx	list	0
+information technology	management	0
+information	treatment	0
+infrastructure	complex	0
+infrastructure	environment	1
+infrastructure	management	0
+infrastructure	programme	0
+infrastructure	treatment	0
+infringement	abuse	1
+ingredient	element	1
+initiative	programme	0
+injunction	ruling	1
+inning	match	0
+insider trading	abuse	0
+inspiration	market price	0
+institute	federation	0
+institution	broker	0
+institution	government	1
+instrument	government security	0
+instrument	loan	1
+insurance	treatment	0
+insurer	broker	0
+insurgency	war	1
+integration	privatisation	0
+integrity	list	0
+intelligence activity	programme	0
+interbank	government security	0
+interdealer	government security	0
+interest rate	gap	1
+interest rate	liquidity	0
+interest rate	surplus	0
+interference	abuse	1
+intermediary	central bank	0
+internal	complex	0
+invasion	war	1
+inventory	liquidity	0
+investigation	sentence	0
+investment analyst	broker	0
+investment banker	broker	1
+investment banking	management	0
+investment company	federation	0
+investor interest	liquidity	0
+investor interest	performance	1
+investor	broker	0
+investor	central bank	0
+involvement	abuse	1
+irregularity	abuse	0
+island	town	0
+issuance	market price	0
+issue	list	0
+item	goods	0
+item	surplus	0
+jail	sentence	0
+japanese government bond	government security	0
+japanese government bonds	government security	0
+jet	warplane	0
+job cut	privatisation	0
+jostling	list	0
+journalist	broker	0
+judge	argument	0
+judge	central bank	0
+judge	ruling	1
+judgement	ruling	1
+judgement	sentence	0
+judgment	ruling	1
+judgment	sentence	0
+jungle	town	0
+jury	argument	0
+justification	sentence	0
+kerb	government security	0
+kidnapping	abuse	1
+kill	sentence	0
+killing	abuse	1
+kind	element	0
+kingdom	town	1
+kobo	warplane	0
+kremlin press	treatment	0
+labour	liquidity	0
+lack	element	0
+lack	list	0
+lakeland	town	1
+lamb	government security	0
+large number	list	1
+last week	central bank	0
+launcher	warplane	0
+law	bill	1
+law	programme	0
+lawsuit	argument	1
+lawsuit	ruling	1
+leader	chairman	1
+leader	federation	0
+leader	government	1
+league	match	0
+leaning	ruling	0
+leasing	management	1
+left	ruling	0
+leftist	ruling	0
+leg	match	0
+legality	element	0
+legislation	bill	1
+legislation	privatisation	0
+legislation	programme	1
+legislation	treatment	1
+legislator	federation	0
+legislature	federation	0
+lender	broker	0
+lender	loan	0
+lending	loan	1
+letter	ruling	0
+levy	loan	0
+liberal	ruling	0
+liberation	federation	0
+life	sentence	0
+lifter	broker	0
+lighthouse	complex	0
+line of credit	loan	0
+link	gap	0
+linkage	gap	0
+liquidation	privatisation	0
+liquidity problem	liquidity	0
+liquidity	@@ billion baht	0
+liquidity	@@@ billion yen	0
+liquidity	account	0
+liquidity	accountability	0
+liquidity	attention	0
+liquidity	avail	0
+liquidity	availability	1
+liquidity	balance of payments	0
+liquidity	blood	0
+liquidity	borrowing	0
+liquidity	buoyancy	1
+liquidity	capacity	0
+liquidity	capital expenditure	0
+liquidity	capitalisation	0
+liquidity	cash	1
+liquidity	competition	0
+liquidity	competitiveness	0
+liquidity	confidence	0
+liquidity	credit	0
+liquidity	deposit	0
+liquidity	depreciation	0
+liquidity	devaluation	0
+liquidity	distortion	0
+liquidity	drought	0
+liquidity	efficiency	0
+liquidity	exchange rate	0
+liquidity	expenditure	0
+liquidity	flexibility	1
+liquidity	flow	0
+liquidity	foreign exchange	0
+liquidity	fund	0
+liquidity	funding	0
+liquidity	incentive	0
+liquidity	inflow	0
+liquidity	interest rate	0
+liquidity	inventory	0
+liquidity	investor interest	0
+liquidity	labour	0
+liquidity	liquidity problem	0
+liquidity	loan	0
+liquidity	margin	0
+liquidity	moisture	1
+liquidity	money market	0
+liquidity	money	0
+liquidity	offtake	0
+liquidity	overcapacity	0
+liquidity	productivity	0
+liquidity	profitability	0
+liquidity	reserve	0
+liquidity	resource	0
+liquidity	rouble	0
+liquidity	rumor	0
+liquidity	satisfaction	0
+liquidity	saving	0
+liquidity	shortage	0
+liquidity	solvency	0
+liquidity	speculation	0
+liquidity	stability	0
+liquidity	strength	0
+liquidity	supervision	0
+liquidity	supply	1
+liquidity	surplus	0
+liquidity	tension	0
+liquidity	transparency	0
+liquidity	uncertainty	0
+liquidity	unemployment	0
+liquidity	visibility	0
+liquidity	volatility	1
+liquidity	volume	0
+liquidity	weakness	1
+list price	market price	0
+list	abolition	0
+list	absence	0
+list	agenda	0
+list	ballot	0
+list	basis	0
+list	board	1
+list	bourse	0
+list	buy	0
+list	campaign	0
+list	candidate	0
+list	commission	1
+list	conglomerate	1
+list	consortium	0
+list	copy	0
+list	coverage	0
+list	creditworthiness	0
+list	delegation	1
+list	detail	0
+list	dozen	1
+list	favour	0
+list	half	0
+list	handful	0
+list	head	0
+list	host	0
+list	hundred	1
+list	importance	0
+list	index	0
+list	influx	0
+list	integrity	0
+list	issue	0
+list	jostling	0
+list	lack	0
+list	large number	1
+list	listed	0
+list	listing	1
+list	majority	1
+list	many	1
+list	map	0
+list	matter	0
+list	neither	0
+list	none	0
+list	number	1
+list	october @@	0
+list	one	0
+list	ownership	0
+list	panel	1
+list	part	0
+list	plenty	1
+list	poll	0
+list	process	0
+list	range	1
+list	register	1
+list	removal	0
+list	sell	0
+list	series	1
+list	short list	0
+list	shortlist	0
+list	slew	1
+list	smallest	0
+list	soundness	0
+list	squad	0
+list	stock market	0
+list	string	1
+list	survey	1
+list	table	0
+list	task force	0
+list	team	0
+list	thirds	0
+list	thousand	1
+list	ticket	0
+list	worry	0
+listed	list	0
+listing	list	1
+listing	privatisation	0
+litigation	war	0
+loan	account	0
+loan	acquisition	0
+loan	aid	1
+loan	arrears	0
+loan	asset	1
+loan	assistance	1
+loan	bad debt	0
+loan	bank deposit	0
+loan	bill	0
+loan	bond	0
+loan	borrowing	1
+loan	cash	0
+loan	certificate	0
+loan	commercial paper	0
+loan	consumer loan	0
+loan	credit	1
+loan	damage	0
+loan	debenture	1
+loan	debt security	0
+loan	debt	1
+loan	deposit	0
+loan	equity investment	0
+loan	equity	0
+loan	facility	0
+loan	fee	0
+loan	financing	1
+loan	first mortgage	0
+loan	fiscal @@@@	0
+loan	fund	1
+loan	funding	1
+loan	government bond	0
+loan	grant	0
+loan	housing	0
+loan	instrument	1
+loan	lender	0
+loan	lending	1
+loan	levy	0
+loan	line of credit	0
+loan	liquidity	0
+loan	loss	0
+loan	money	1
+loan	mortgage	0
+loan	note	0
+loan	obligation	0
+loan	paper	0
+loan	payment	1
+loan	portfolio	0
+loan	proceeds	0
+loan	project	0
+loan	promissory note	0
+loan	property	0
+loan	purchase	0
+loan	rate	0
+loan	repayment	0
+loan	reserve	0
+loan	revolving credit	0
+loan	saving	0
+loan	security	0
+loan	subsidy	0
+loan	tax	0
+loan	transaction	0
+loan	treasury bill	0
+loan	warrant	0
+location	complex	1
+location	town	1
+logistics	environment	1
+logistics	management	1
+loosening	element	0
+loss	loan	0
+loss	performance	0
+loss	surplus	0
+lysine	government security	0
+machinery	goods	1
+maintenance	management	1
+majority	list	1
+malpractice	abuse	0
+management	accounting	0
+management	administration	1
+management	aerospace	0
+management	agriculture	0
+management	asset	0
+management	banking	0
+management	building material	0
+management	chemical	0
+management	communication	1
+management	computer	0
+management	construction	0
+management	control	1
+management	customer service	0
+management	database	0
+management	defence	0
+management	department	1
+management	development	0
+management	director	0
+management	distribution	1
+management	energy	0
+management	engineering	0
+management	entertainment	0
+management	executive	1
+management	expertise	0
+management	finance	0
+management	financing	1
+management	funding	0
+management	information technology	0
+management	infrastructure	0
+management	investment banking	0
+management	leasing	0
+management	logistics	1
+management	maintenance	1
+management	manager	1
+management	manufacturing	1
+management	marketing	1
+management	mining	0
+management	multimedia	0
+management	operation	0
+management	planning	1
+management	policy	0
+management	practice	1
+management	processing	1
+management	reinsurance	0
+management	research	0
+management	safety	0
+management	security	0
+management	service	1
+management	storage	1
+management	strategy	0
+management	structure	1
+management	supervision	0
+management	technology	0
+management	telecommunication	0
+management	telecoms	1
+management	transmission	0
+management	transport	1
+management	transportation	1
+manager	broker	0
+manager	chairman	0
+manager	management	0
+managing director	chairman	0
+manipulation	abuse	1
+manufacturing	management	1
+manufacturing	treatment	0
+many	list	1
+map	list	0
+margin	gap	0
+margin	liquidity	0
+margin	performance	0
+marker	market price	0
+market analyst	broker	0
+market analyst	market price	0
+market condition	environment	1
+market condition	market price	0
+market condition	performance	1
+market maker	broker	1
+market order	market price	0
+market price	@@ percent	0
+market price	aspiration	0
+market price	asset value	1
+market price	authorization	0
+market price	bank discount	0
+market price	bearishness	0
+market price	bid price	0
+market price	book value	0
+market price	buy recommendation	0
+market price	cash dividend	0
+market price	census	0
+market price	cif	0
+market price	closeness	0
+market price	closing price	0
+market price	conversion price	1
+market price	deductibles	0
+market price	deferreds	0
+market price	descent	0
+market price	differential	0
+market price	dividend rate	1
+market price	downtrend	0
+market price	economic condition	0
+market price	equity market	1
+market price	exchange rate	0
+market price	exercise price	0
+market price	face value	0
+market price	fare	1
+market price	fob	0
+market price	futures price	1
+market price	gas price	0
+market price	growth rate	0
+market price	inspiration	0
+market price	issuance	0
+market price	list price	0
+market price	marker	1
+market price	market analyst	0
+market price	market condition	0
+market price	market order	0
+market price	market strategist	0
+market price	market system	0
+market price	market value	1
+market price	moment	0
+market price	mortgage rate	0
+market price	naira	0
+market price	offer price	0
+market price	offering price	0
+market price	opposite	0
+market price	pace	0
+market price	packet	0
+market price	peer	0
+market price	press conference	0
+market price	price level	1
+market price	price	1
+market price	production cost	0
+market price	purchase price	1
+market price	quotation	0
+market price	radiation	0
+market price	registry	0
+market price	rent	0
+market price	retail price	0
+market price	retenders	0
+market price	sale price	1
+market price	share price	0
+market price	short sale	0
+market price	spot	0
+market price	takeover bid	0
+market price	tender offer	0
+market price	up to five percent	0
+market price	valuation	1
+market price	value	1
+market price	workweek	0
+market reform	bill	1
+market share	performance	0
+market strategist	market price	0
+market system	market price	0
+market value	market price	1
+market value	surplus	0
+market watcher	broker	0
+marketing	management	1
+marketing	treatment	0
+marketmaker	broker	0
+marketplace	environment	1
+mass	sentence	0
+massacre	abuse	1
+massacre	war	0
+massing	warplane	0
+match	appearance	0
+match	ball	0
+match	batter	0
+match	battle	0
+match	century	0
+match	championship	0
+match	clash	0
+match	club	0
+match	competition	1
+match	contest	1
+match	cricket	0
+match	defeat	0
+match	doubleheader	0
+match	event	1
+match	extra time	0
+match	final	0
+match	fixture	0
+match	fourth	0
+match	game	1
+match	general election	0
+match	goal	0
+match	hole	0
+match	inning	0
+match	league	0
+match	leg	0
+match	matchup	1
+match	opener	0
+match	place	0
+match	play	1
+match	player	0
+match	playoff	1
+match	prize	0
+match	qualifier	1
+match	quarterfinal	0
+match	race	1
+match	reach	0
+match	record	0
+match	round	1
+match	season	0
+match	second period	0
+match	semifinal	1
+match	series	0
+match	session	1
+match	showdown	0
+match	soccer	1
+match	stage	0
+match	start	0
+match	team	0
+match	test match	0
+match	test	1
+match	tie	0
+match	title	0
+match	tour	0
+match	tournament	1
+match	victory	0
+match	win	0
+match	winner	0
+matchup	match	1
+material	goods	1
+matter	bill	0
+matter	list	0
+maturing	government security	0
+maturity	bill	0
+mayor	chairman	0
+mayor	federation	0
+measure	bill	1
+measure	programme	1
+medicine	goods	1
+medicine	treatment	1
+member	chairman	0
+member	government	0
+memory chip	government security	0
+merger	bill	0
+merger	ruling	0
+metal	goods	1
+method	programme	1
+metropolis	complex	0
+middlemen	argument	0
+military campaign	war	1
+military installation	warplane	0
+military personnel	warplane	0
+mill	complex	1
+mine	central bank	0
+mine	complex	1
+mining	environment	1
+mining	management	1
+minister	chairman	0
+minister	government	0
+ministry	central bank	1
+ministry	federation	0
+ministry	government	0
+minority interest	government security	0
+misconduct	abuse	1
+misconduct	sentence	0
+misgiving	argument	0
+missile	warplane	0
+mistrial	argument	0
+mix	environment	0
+modality	element	0
+modernisation	privatisation	0
+modernization	privatisation	0
+moisture	liquidity	1
+molestation	abuse	1
+moment	market price	0
+money dealer	broker	1
+money market	government security	0
+money market	liquidity	0
+money supply	gap	0
+money	liquidity	0
+money	loan	1
+moody's	broker	1
+mortgage rate	market price	0
+mortgage	loan	1
+motion	argument	0
+motion	bill	1
+motion	ruling	1
+motive	sentence	0
+mountain	town	0
+multimedia	management	0
+multinationals	warplane	0
+municipal bond	government security	1
+municipality	town	1
+murder	abuse	1
+murder	war	0
+mutual fund	broker	1
+naira	market price	0
+naphtha	government security	0
+nation	central bank	1
+nation	town	0
+nationalist	ruling	0
+natural gas	goods	1
+nature	element	1
+nearly eight percent	government security	0
+negotiation	privatisation	0
+negotiation	programme	0
+neighbour	government	0
+neither	list	0
+net income	surplus	0
+net profit	gap	0
+net profit	surplus	1
+nickel	goods	1
+none	list	0
+north	town	0
+northwest	town	0
+note	bill	1
+note	government security	0
+note	loan	0
+notes	government security	0
+notice	argument	0
+notice	ruling	0
+number one	gap	0
+number	list	1
+objective	gap	0
+obligation	loan	0
+october @@	list	0
+odds	argument	0
+offence	abuse	1
+offensive	war	1
+offer price	market price	1
+offering price	market price	0
+office	central bank	0
+office	complex	0
+officer	chairman	1
+official	broker	0
+offtake	liquidity	0
+oil	goods	1
+olein	government security	0
+one	list	0
+onslaught	war	1
+opener	match	0
+operation	management	1
+operator	broker	1
+operator	complex	0
+opinion	ruling	0
+opportunity	environment	0
+opposite	market price	0
+opposition party	government	0
+opposition	government	0
+order	ruling	0
+organisation	central bank	0
+organisation	federation	0
+organisation	programme	0
+outflow	surplus	0
+outlook	environment	0
+outlook	performance	1
+output	surplus	0
+over four percent	surplus	0
+overcapacity	liquidity	0
+overflights	warplane	0
+overseer	central bank	0
+oversold	government security	0
+owner	chairman	0
+ownership	list	0
+ownership	privatisation	0
+pace	market price	0
+package	bill	0
+package	element	0
+package	programme	1
+packet	market price	0
+pact	bill	0
+pact	gap	0
+paedophilia	abuse	0
+page	bill	0
+palm oil	goods	1
+panel	federation	0
+panel	list	1
+paper	bill	0
+paper	government security	0
+paper	loan	0
+parliament	central bank	1
+parliament	government	0
+parliament	town	0
+parliamentary	ruling	0
+parole	sentence	0
+part	element	1
+part	list	0
+participation	element	0
+partner	government	0
+party	central bank	0
+party	federation	0
+party	government	0
+passage	argument	0
+path	element	0
+patient	treatment	0
+patrol	warplane	1
+patrolling	warplane	0
+pattern	environment	0
+pay cut	surplus	0
+payment	bill	0
+payment	loan	1
+payment	programme	0
+peer	market price	0
+penalty	sentence	0
+peninsula	town	0
+performance	ability	1
+performance	achievement	0
+performance	activity	1
+performance	business condition	0
+performance	competition	0
+performance	condition	1
+performance	data	0
+performance	decline	0
+performance	demand	0
+performance	development	0
+performance	earnings growth	0
+performance	earnings	1
+performance	efficiency	1
+performance	environment	0
+performance	expectation	0
+performance	figure	1
+performance	financial condition	0
+performance	footing	0
+performance	fundamental	0
+performance	gain	1
+performance	growth prospect	0
+performance	growth	0
+performance	improvement	0
+performance	income	1
+performance	investor interest	0
+performance	loss	0
+performance	margin	0
+performance	market condition	0
+performance	market share	0
+performance	outlook	1
+performance	performer	1
+performance	picture	0
+performance	productivity	1
+performance	profit	0
+performance	profitability	0
+performance	progress	0
+performance	prospect	1
+performance	quality	1
+performance	rally	0
+performance	record	0
+performance	recovery	0
+performance	reduction	0
+performance	result	1
+performance	return	1
+performance	revenue growth	0
+performance	revenue	1
+performance	sale	0
+performance	sentiment	0
+performance	showing	1
+performance	slowdown	0
+performance	sluggishness	0
+performance	spending	0
+performance	strength	1
+performance	structure	0
+performance	success	0
+performance	tone	0
+performance	trend	0
+performance	upturn	0
+performance	victory	0
+performance	weakness	0
+performer	performance	0
+permission	ruling	0
+peso	government security	0
+pest	warplane	0
+petition	argument	1
+petrochemical	goods	0
+phase	element	1
+phase	programme	1
+picture	argument	0
+picture	environment	1
+picture	performance	1
+pilgrim	warplane	0
+pilot	warplane	0
+pipeline	complex	0
+pipeline	treatment	0
+place	match	0
+place	town	1
+plaintiff	argument	0
+plan	bill	0
+plan	programme	1
+plane	warplane	1
+plank	element	1
+planning	management	0
+plant	complex	1
+play	match	1
+player	match	0
+playoff	match	1
+pledge	argument	0
+plenty	list	1
+po	ruling	0
+police headquarters	complex	1
+police	central bank	0
+police	government	1
+policy	bill	0
+policy	environment	1
+policy	management	1
+policy	programme	1
+political party	federation	0
+political party	government	0
+politician	broker	0
+politician	government	0
+poll	list	1
+pork	goods	1
+porn	abuse	0
+pornography	abuse	1
+port	complex	1
+port	town	1
+portfolio	loan	0
+portion	element	1
+power broker	broker	0
+power plant	complex	1
+power station	complex	1
+powerful	ruling	0
+practice	management	1
+precipice	complex	0
+predecessor	government	0
+prefect	federation	0
+prefecture	town	0
+preferred stock	government security	0
+premier	federation	0
+premier	government	1
+premise	argument	0
+presence	argument	0
+presidency	federation	0
+presidency	government	0
+president	chairman	0
+president	federation	0
+president	government	0
+press conference	market price	0
+pretax profit	surplus	0
+prevention	treatment	0
+price level	market price	1
+price tag	gap	0
+price tag	surplus	0
+price	market price	0
+principle	element	0
+prison sentence	sentence	1
+prison term	sentence	1
+prison	sentence	0
+prison	war	0
+privatisation	acquisition	1
+privatisation	austerity	0
+privatisation	budget	0
+privatisation	consolidation	0
+privatisation	construction	0
+privatisation	convergence	0
+privatisation	cooperation	0
+privatisation	cost cutting	0
+privatisation	creation	0
+privatisation	cull	0
+privatisation	demerger	0
+privatisation	deregulation	1
+privatisation	development	0
+privatisation	disarmament	0
+privatisation	disposal	0
+privatisation	diversification	0
+privatisation	divestment	0
+privatisation	drilling	0
+privatisation	education	0
+privatisation	election	0
+privatisation	eradication	0
+privatisation	establishment	0
+privatisation	expansion	0
+privatisation	float	0
+privatisation	flotation	1
+privatisation	general election	0
+privatisation	health	0
+privatisation	immigration	0
+privatisation	implementation	1
+privatisation	integration	0
+privatisation	job cut	0
+privatisation	legislation	1
+privatisation	liquidation	0
+privatisation	listing	0
+privatisation	merger	0
+privatisation	modernisation	0
+privatisation	modernization	0
+privatisation	negotiation	0
+privatisation	ownership	0
+privatisation	peace	0
+privatisation	privatisations	0
+privatisation	privatization	1
+privatisation	process	1
+privatisation	promotion	0
+privatisation	purchase	0
+privatisation	reconstruction	0
+privatisation	recovery	0
+privatisation	reform	0
+privatisation	reorganisation	1
+privatisation	repatriation	0
+privatisation	sale	0
+privatisation	selloff	0
+privatisation	settlement	1
+privatisation	supervision	0
+privatisation	takeover	0
+privatisation	tax cut	0
+privatisation	transformation	1
+privatisation	transition	1
+privatisation	trial	0
+privatisations	privatisation	1
+prize	match	0
+probable cause	element	0
+probation	sentence	0
+procedure	treatment	1
+proceeds	loan	0
+process	bill	0
+process	list	0
+process	privatisation	0
+process	programme	1
+processing	complex	0
+processing	management	1
+processing	treatment	1
+proclamation	federation	0
+producer	broker	0
+product	goods	1
+production cost	market price	0
+productivity	liquidity	0
+productivity	performance	1
+profit margin	environment	0
+profit	performance	1
+profit	surplus	1
+profitability	liquidity	0
+profitability	performance	1
+profits	gap	0
+profits	surplus	1
+program	bill	1
+program	programme	1
+programme	accord	0
+programme	acquisition	0
+programme	action	1
+programme	agency	1
+programme	agenda	1
+programme	agreement	0
+programme	arrangement	1
+programme	assistance	0
+programme	bill	0
+programme	bill	1
+programme	budget	1
+programme	campaign	1
+programme	cooperation	0
+programme	deal	0
+programme	development	0
+programme	drive	0
+programme	effort	1
+programme	funding	1
+programme	incentive	0
+programme	infrastructure	0
+programme	initiative	1
+programme	intelligence activity	0
+programme	law	0
+programme	legislation	0
+programme	measure	1
+programme	method	1
+programme	negotiation	0
+programme	organisation	0
+programme	package	1
+programme	payment	0
+programme	phase	0
+programme	plan	1
+programme	policy	1
+programme	process	1
+programme	program	1
+programme	project	1
+programme	proposal	1
+programme	reconstruction	0
+programme	reform	0
+programme	research	0
+programme	scheme	1
+programme	service	0
+programme	solution	1
+programme	stability	0
+programme	step	0
+programme	strategy	1
+programme	study	1
+programme	subsidy	0
+programme	system	1
+programme	technology	0
+programme	television program	0
+programme	transaction	0
+programme	treaty	0
+programme	work	0
+progress	performance	1
+project	complex	1
+project	loan	0
+project	programme	1
+projection	gap	0
+projection	surplus	0
+promise	argument	0
+promissory note	loan	1
+promoter	federation	0
+promotion	privatisation	0
+property	complex	0
+property	loan	0
+proposal	bill	0
+proposal	programme	1
+proposed	complex	0
+prosecutor	argument	0
+prospect	environment	1
+prospect	performance	1
+prospectus	argument	0
+prostitution	abuse	1
+protection	treatment	1
+protest	war	0
+province	town	0
+provincial capital	town	1
+provincial	ruling	0
+provision	bill	0
+punishment	sentence	1
+purchase price	market price	1
+purchase	loan	0
+purchase	privatisation	0
+purification	treatment	1
+purpose	element	0
+put option	government security	0
+put	sentence	0
+qualifier	match	1
+quality of life	environment	1
+quality	environment	0
+quality	performance	1
+quarterfinal	match	1
+question mark	argument	1
+question	argument	0
+questioner	treatment	0
+questioning	argument	0
+quotation	market price	0
+race	match	1
+racism	abuse	0
+radar	warplane	0
+radiation	market price	0
+radical	ruling	0
+raid	war	0
+rally	performance	1
+ramification	argument	0
+range	list	1
+rangebound	government security	0
+rape	abuse	1
+rate	loan	0
+ratio	gap	1
+ratio	surplus	0
+raw material	goods	1
+reach	match	0
+reactor	complex	1
+reason	argument	1
+reason	central bank	0
+reassessment	argument	0
+rebel	government	0
+rebel	ruling	0
+rebel	warplane	0
+rebellion	war	0
+receipt	gap	0
+recommendation	ruling	0
+reconstruction	privatisation	0
+reconstruction	programme	0
+reconstruction	treatment	1
+record	match	0
+record	performance	1
+recovery	performance	1
+recovery	privatisation	0
+recreation	environment	0
+reduction	performance	0
+reevaluation	element	0
+referendum	ruling	1
+refiner	broker	0
+refiner	central bank	0
+refinery	complex	1
+reform	bill	0
+reform	programme	1
+regime	environment	1
+regime	government	1
+region	town	1
+regional	ruling	0
+register	list	1
+registry	market price	0
+regulation	bill	1
+regulator	central bank	0
+regulator	government	1
+reinsurance	management	0
+rejection	element	0
+relation	environment	0
+relation	gap	0
+relationship	gap	0
+reliability	environment	0
+remark	argument	0
+remark	ruling	0
+remittance	surplus	0
+removal	list	0
+rent	market price	1
+reorganisation	privatisation	0
+repair	treatment	0
+repatriation	privatisation	0
+repayment	gap	0
+repayment	loan	0
+repo	bill	0
+repos	bill	0
+repos	government security	0
+representative	chairman	1
+representative	federation	0
+repression	abuse	1
+reprisal	sentence	1
+republic	central bank	0
+republic	federation	0
+republic	government	1
+republic	town	0
+research	environment	0
+research	management	0
+research	programme	0
+research	treatment	0
+reserve	liquidity	1
+reserve	loan	0
+resistance	gap	0
+resolution	bill	0
+resolution	ruling	1
+resort	complex	0
+resort	town	1
+resource	liquidity	0
+restitution	sentence	0
+restriction	sentence	0
+result	performance	1
+retail price	market price	0
+retaliation	sentence	1
+retenders	market price	0
+retraining	treatment	0
+return	performance	1
+revenue growth	performance	1
+revenue	bill	0
+revenue	gap	0
+revenue	performance	1
+revenue	surplus	0
+reversal	gap	0
+review	element	0
+revolt	war	0
+revolution	war	0
+revolving credit	loan	0
+rice	goods	1
+rigging	abuse	0
+riot	war	0
+rivalry	gap	1
+road	town	0
+robbery	abuse	1
+rocket launcher	warplane	0
+rolling mill	federation	0
+room	argument	0
+room	central bank	0
+rouble	liquidity	0
+round	match	1
+row	war	0
+rule	bill	1
+rule	ruling	1
+rule	treatment	0
+ruling	acquittal	0
+ruling	analysis	0
+ruling	appeal	0
+ruling	approval	0
+ruling	article	0
+ruling	assurance	0
+ruling	centrist	0
+ruling	closing price	0
+ruling	comment	0
+ruling	communist	0
+ruling	comparison	0
+ruling	compromise	0
+ruling	concession	0
+ruling	conservative	0
+ruling	conviction	0
+ruling	decision	0
+ruling	detention	0
+ruling	directive	1
+ruling	discussion	0
+ruling	document	0
+ruling	dominant	1
+ruling	feuding	0
+ruling	file	0
+ruling	former	0
+ruling	from	0
+ruling	governing	1
+ruling	guideline	0
+ruling	hearing	0
+ruling	incumbent	0
+ruling	indictment	0
+ruling	injunction	0
+ruling	judge	1
+ruling	judgement	1
+ruling	judgment	1
+ruling	lawsuit	1
+ruling	leaning	0
+ruling	left	0
+ruling	leftist	0
+ruling	letter	0
+ruling	liberal	0
+ruling	merger	0
+ruling	motion	1
+ruling	nationalist	0
+ruling	notice	0
+ruling	opinion	0
+ruling	order	1
+ruling	parliamentary	0
+ruling	permission	0
+ruling	po	0
+ruling	powerful	0
+ruling	provincial	0
+ruling	radical	0
+ruling	rebel	0
+ruling	recommendation	0
+ruling	referendum	0
+ruling	regional	0
+ruling	remark	0
+ruling	resolution	1
+ruling	rule	1
+ruling	senior	1
+ruling	sentence	0
+ruling	socialist	0
+ruling	statement	0
+ruling	summary judgment	1
+ruling	summons	0
+ruling	text	0
+ruling	unknown	0
+ruling	verdict	1
+rumor	liquidity	0
+runway	complex	1
+safety	environment	1
+safety	management	0
+sale price	market price	1
+sale	performance	1
+sale	privatisation	0
+sanction	sentence	1
+sanction	war	0
+sanctuary	complex	0
+satisfaction	liquidity	0
+saving	liquidity	0
+saving	loan	0
+saving	surplus	1
+savings bond	government security	0
+scan	treatment	1
+scandal	abuse	1
+scandal	war	0
+scenario	argument	0
+scheme	bill	1
+scheme	programme	1
+scheme	treatment	0
+schizophrenia	treatment	0
+scope	argument	0
+scope	central bank	0
+scorer	treatment	0
+season	match	0
+second period	match	1
+secret service	central bank	0
+secretary	chairman	0
+secretary	federation	0
+sector	complex	0
+securities firm	broker	0
+security force	warplane	1
+security	loan	0
+security	management	0
+selector	warplane	0
+sell	list	0
+selloff	privatisation	0
+semiconductor	goods	1
+semifinal	match	1
+senate	federation	0
+senator	chairman	0
+senior vice president	chairman	0
+senior	ruling	0
+sentence	absentia	0
+sentence	acquittal	0
+sentence	arrest	0
+sentence	blame	0
+sentence	bother	0
+sentence	boycott	0
+sentence	burden	0
+sentence	chun	0
+sentence	convict	0
+sentence	conviction	0
+sentence	count	0
+sentence	criminal court	0
+sentence	criterion	0
+sentence	curb	0
+sentence	death penalty	0
+sentence	democratic party	0
+sentence	detention	0
+sentence	dismissal	0
+sentence	echelon	0
+sentence	eligibility	0
+sentence	extension	0
+sentence	extradition	0
+sentence	fine	0
+sentence	hour	0
+sentence	humanity	0
+sentence	hunt	0
+sentence	impeachment	0
+sentence	imprisonment	0
+sentence	indictment	0
+sentence	investigation	0
+sentence	jail	0
+sentence	judgement	1
+sentence	judgment	1
+sentence	justification	0
+sentence	kill	0
+sentence	life	0
+sentence	mass	0
+sentence	misconduct	0
+sentence	motive	0
+sentence	parole	0
+sentence	penalty	1
+sentence	prison sentence	0
+sentence	prison term	0
+sentence	prison	0
+sentence	probation	0
+sentence	punishment	1
+sentence	put	0
+sentence	reprisal	0
+sentence	restitution	0
+sentence	restriction	0
+sentence	retaliation	0
+sentence	ruling	1
+sentence	sanction	1
+sentence	serve	0
+sentence	suspension	0
+sentence	tax cut	0
+sentence	timeframe	0
+sentence	trap	0
+sentence	treasury note	0
+sentence	trial	1
+sentence	verdict	0
+sentence	woo	0
+sentiment	environment	0
+sentiment	performance	0
+separate	complex	0
+separation	gap	1
+series	list	1
+series	match	0
+serve	sentence	0
+service	management	0
+service	programme	0
+session	match	0
+settlement	bill	0
+settlement	privatisation	0
+seven billion rupiah	central bank	0
+sewerage	treatment	0
+sex	abuse	0
+sexual harassment	abuse	1
+share price	market price	0
+shareholder	broker	0
+shelter	treatment	0
+ship	complex	0
+ship	warplane	0
+shooting	abuse	0
+short list	list	1
+short sale	market price	1
+shortage	gap	1
+shortage	liquidity	0
+shortage	surplus	0
+shortfall	gap	1
+shortfall	surplus	0
+shortlist	list	1
+showdown	match	0
+showing	argument	0
+showing	performance	1
+side	government	0
+siege	war	1
+sign	element	0
+simple	complex	0
+site	complex	1
+situation	environment	1
+size	element	0
+skill	environment	0
+skill	treatment	0
+skirmish	argument	1
+slew	list	1
+slide	gap	0
+slide	surplus	0
+slowdown	performance	1
+sluggishness	performance	1
+small town	town	1
+smallest	list	1
+smelter	complex	1
+smuggling	abuse	1
+soccer	match	1
+socialist	ruling	0
+software	environment	0
+soldier	warplane	0
+solution	programme	0
+solution	treatment	1
+solvency	liquidity	1
+soundness	list	0
+source	broker	0
+south	town	0
+space	complex	0
+speaker	chairman	0
+speculation	liquidity	0
+speculator	broker	0
+speech	argument	1
+spending	gap	0
+spending	performance	0
+spending	surplus	0
+spokesman	chairman	0
+spot	market price	0
+spread	gap	1
+squad	list	0
+squeeze	gap	0
+stability	environment	0
+stability	liquidity	0
+stability	programme	0
+stage	match	0
+start	match	0
+state government	central bank	1
+state legislature	federation	0
+state of war	argument	0
+state of war	war	1
+state	central bank	0
+state	government	1
+state	town	1
+statement	ruling	0
+station	complex	1
+steel	goods	1
+steering committee	federation	0
+step	element	1
+step	programme	1
+sterling	government security	0
+stg	surplus	0
+stock market	list	1
+stock option	government security	0
+stockbroker	broker	1
+stockholder	broker	0
+stopgap	gap	0
+storage	management	0
+storage	treatment	0
+strategy	environment	0
+strategy	management	0
+strategy	programme	1
+strength	liquidity	0
+strength	performance	1
+strife	war	1
+strike	war	1
+string	list	1
+stronghold	town	1
+structure	environment	0
+structure	management	0
+structure	performance	0
+struggle	war	1
+study	programme	1
+submarine	complex	0
+submarine	warplane	0
+subsidy	bill	0
+subsidy	loan	0
+subsidy	programme	0
+suburb	town	1
+success	performance	1
+successful	complex	0
+sugar	goods	1
+suit	argument	0
+summary judgment	argument	0
+summary judgment	ruling	1
+summons	ruling	0
+supercomputers	government security	0
+supervision	liquidity	0
+supervision	management	0
+supervision	privatisation	0
+supply	liquidity	0
+surgeon	treatment	1
+surgery	treatment	1
+surplus	@@@ million	0
+surplus	balance	0
+surplus	borrowing	0
+surplus	budget deficit	0
+surplus	budget	1
+surplus	capital gain	1
+surplus	carryover	1
+surplus	constraint	0
+surplus	consumption	0
+surplus	cost	0
+surplus	crop	0
+surplus	crown	0
+surplus	current account	0
+surplus	debt	0
+surplus	decline	0
+surplus	deficit	0
+surplus	displacement	0
+surplus	earning per share	1
+surplus	earnings	0
+surplus	excess	1
+surplus	face amount	0
+surplus	figure	0
+surplus	firming	0
+surplus	flow	0
+surplus	gap	1
+surplus	growth rate	0
+surplus	harvest	1
+surplus	import	0
+surplus	inflation rate	0
+surplus	inflation	0
+surplus	inflow	1
+surplus	interest rate	0
+surplus	item	0
+surplus	liquidity	0
+surplus	loss	0
+surplus	market value	0
+surplus	net income	1
+surplus	net profit	1
+surplus	outflow	0
+surplus	output	0
+surplus	over four percent	0
+surplus	pay cut	0
+surplus	pretax profit	1
+surplus	price tag	0
+surplus	profit	1
+surplus	profits	1
+surplus	projection	0
+surplus	ratio	1
+surplus	remittance	0
+surplus	revenue	0
+surplus	saving	0
+surplus	shortage	0
+surplus	shortfall	0
+surplus	slide	0
+surplus	spending	0
+surplus	stg	0
+surplus	total	0
+surplus	trade balance	1
+surplus	trade deficit	0
+surplus	trade surplus	0
+surplus	turnover	0
+surplus	unemployment	0
+surplus	unwrought	0
+surplus	value	1
+survey	list	1
+suspension	sentence	0
+swap	government security	0
+symptom	treatment	0
+system	environment	1
+system	programme	1
+table	list	1
+takeover bid	market price	0
+takeover	privatisation	0
+tank	warplane	0
+target	gap	0
+task force	list	0
+tax cut	privatisation	0
+tax cut	sentence	0
+tax evasion	abuse	0
+tax law	bill	1
+tax	loan	0
+tea	goods	1
+team	list	0
+team	match	0
+technology	management	0
+technology	programme	0
+telecommunication	environment	1
+telecommunication	management	1
+telecommunication	treatment	0
+telecoms	management	1
+telephone company	government security	0
+television program	programme	1
+television station	broker	0
+tender offer	market price	0
+tenet	element	1
+tension	liquidity	0
+tension	war	1
+terminal	complex	1
+territory	town	1
+terrorism	abuse	1
+terrorism	war	0
+test match	match	1
+test	match	1
+test	treatment	1
+testimony	argument	1
+testing	treatment	0
+text	bill	0
+text	element	0
+text	ruling	0
+textile mill	central bank	0
+textile	goods	1
+theft	abuse	1
+theme	element	0
+theory	argument	1
+therapy	treatment	1
+thing	element	1
+thirds	list	0
+thousand	list	1
+threshhold	treatment	0
+threshold	treatment	0
+ticket	list	0
+tie	gap	0
+tie	match	0
+tightening	gap	0
+timber	goods	1
+timeframe	sentence	0
+title	match	0
+today	central bank	0
+tone	performance	0
+tool	environment	0
+topic	element	0
+torpedo	warplane	0
+torture	abuse	1
+total	surplus	0
+tour	match	0
+tourism	complex	0
+tournament	match	1
+tower	complex	0
+town	airport	0
+town	area	1
+town	base	0
+town	border	0
+town	camp	0
+town	capital	1
+town	centre	1
+town	checkpoint	0
+town	city	1
+town	coast	0
+town	colony	0
+town	community	1
+town	complex	1
+town	country	0
+town	county	0
+town	district	1
+town	enclave	1
+town	holy city	0
+town	hospital	0
+town	hotel	0
+town	indian capital	0
+town	island	0
+town	jungle	0
+town	kingdom	1
+town	lakeland	0
+town	location	1
+town	mountain	0
+town	municipality	1
+town	nation	0
+town	north	0
+town	northwest	0
+town	parliament	0
+town	peninsula	0
+town	place	1
+town	port	1
+town	prefecture	0
+town	province	0
+town	provincial capital	0
+town	region	1
+town	republic	0
+town	resort	1
+town	road	0
+town	small town	0
+town	south	0
+town	state	1
+town	stronghold	1
+town	suburb	1
+town	territory	1
+town	valley	0
+town	village	1
+town	voting	0
+town	zone	1
+toy	goods	1
+trade balance	surplus	0
+trade deficit	gap	1
+trade deficit	surplus	0
+trade surplus	gap	1
+trade surplus	surplus	1
+trade union	central bank	0
+trade union	federation	0
+trader	broker	0
+trafficking	abuse	1
+train	warplane	0
+training	treatment	0
+transaction	loan	0
+transaction	programme	0
+transferability	element	0
+transition	privatisation	0
+transitional	complex	0
+transmission	management	0
+transmission	treatment	0
+transparency	liquidity	0
+transport	environment	1
+transport	management	1
+transportation	management	1
+trap	sentence	0
+treasurer	chairman	0
+treasury bill	bill	1
+treasury bill	government security	1
+treasury bill	loan	0
+treasury bond	bill	1
+treasury bond	government security	1
+treasury note	bill	1
+treasury note	sentence	0
+treasury stock	government security	0
+treasury	central bank	0
+treatment	access	0
+treatment	advice	0
+treatment	aid	1
+treatment	angioplasty	0
+treatment	assistance	1
+treatment	assurance	0
+treatment	automation	0
+treatment	backup	0
+treatment	cancer cell	0
+treatment	care	1
+treatment	castration	0
+treatment	check	0
+treatment	checkup	0
+treatment	choice	0
+treatment	circumstance	0
+treatment	clearance	0
+treatment	compound	0
+treatment	coronary artery	0
+treatment	coverage	0
+treatment	customer service	0
+treatment	decoder	0
+treatment	detection	0
+treatment	device	0
+treatment	diagnosis	0
+treatment	died	0
+treatment	distribution	0
+treatment	drug	0
+treatment	education	0
+treatment	extraction	0
+treatment	fabrication	0
+treatment	financing	0
+treatment	form	0
+treatment	frame	0
+treatment	funding	0
+treatment	gathering	0
+treatment	handling	1
+treatment	higher education	0
+treatment	identification	0
+treatment	incidence	0
+treatment	information	0
+treatment	infrastructure	0
+treatment	insurance	0
+treatment	kremlin press	0
+treatment	legislation	0
+treatment	manufacturing	0
+treatment	marketing	0
+treatment	medicine	1
+treatment	patient	0
+treatment	pipeline	0
+treatment	prevention	0
+treatment	procedure	1
+treatment	processing	0
+treatment	protection	0
+treatment	purification	1
+treatment	questioner	0
+treatment	reconstruction	0
+treatment	repair	0
+treatment	research	0
+treatment	retraining	0
+treatment	rule	0
+treatment	scan	0
+treatment	scheme	0
+treatment	schizophrenia	0
+treatment	scorer	0
+treatment	sewerage	0
+treatment	shelter	0
+treatment	skill	0
+treatment	solution	1
+treatment	storage	0
+treatment	surgeon	0
+treatment	surgery	0
+treatment	symptom	0
+treatment	telecommunication	0
+treatment	test	0
+treatment	testing	0
+treatment	therapy	1
+treatment	threshhold	0
+treatment	threshold	0
+treatment	training	0
+treatment	transmission	0
+treatment	trial	0
+treatment	vaccine	0
+treatment	wastewater	0
+treatment	water supply	0
+treaty	bill	1
+treaty	programme	0
+trend	environment	0
+trend	performance	1
+trial	privatisation	0
+trial	sentence	0
+trial	treatment	0
+troop	warplane	0
+truck	goods	1
+turnover	surplus	0
+two to five percent	central bank	0
+type	element	0
+uncertainty	argument	0
+uncertainty	liquidity	0
+understanding	element	0
+unemployment	gap	0
+unemployment	liquidity	0
+unemployment	surplus	0
+union	central bank	0
+union	federation	1
+union	government	1
+unit	central bank	0
+unit	complex	0
+university	federation	0
+unknown	ruling	0
+unlisted security	government security	0
+unlisted stock	government security	0
+unrest	war	0
+unwrought	surplus	0
+up to five percent	market price	0
+uprising	war	0
+upturn	gap	0
+upturn	performance	1
+urban area	environment	1
+utensil	goods	1
+utility	central bank	0
+vacancy	gap	1
+vaccine	treatment	1
+valley	town	0
+valuation	market price	1
+value	market price	1
+value	surplus	0
+vehicle	goods	1
+vehicle	warplane	1
+venture	complex	0
+verdict	argument	0
+verdict	ruling	1
+verdict	sentence	0
+version	element	0
+vessel	warplane	0
+vice chairman	chairman	0
+vice president	chairman	0
+victory	match	0
+victory	performance	1
+village	complex	0
+village	town	1
+violation	abuse	1
+violence	abuse	1
+violence	war	1
+visibility	liquidity	0
+void	gap	1
+volatility	liquidity	0
+volume	liquidity	0
+voting	town	0
+wall street analyst	broker	1
+war crime	abuse	0
+war	aggression	1
+war	anger	1
+war	army	0
+war	assault	1
+war	attack	1
+war	ban	0
+war	battle	1
+war	bloodshed	1
+war	bombing	0
+war	campaign	1
+war	civil war	1
+war	clash	1
+war	conflict	1
+war	confrontation	1
+war	coup	0
+war	crackdown	1
+war	crime	0
+war	crisis	0
+war	debate	0
+war	difference	0
+war	dispute	1
+war	drug	0
+war	fight	1
+war	fighting	1
+war	flood	0
+war	force	1
+war	gunfight	0
+war	hostility	1
+war	incident	0
+war	insurgency	0
+war	invasion	0
+war	litigation	0
+war	massacre	0
+war	military campaign	1
+war	murder	0
+war	offensive	1
+war	onslaught	0
+war	prison	0
+war	protest	0
+war	raid	0
+war	rebellion	0
+war	revolt	0
+war	revolution	0
+war	riot	0
+war	row	1
+war	sanction	0
+war	scandal	0
+war	siege	0
+war	state of war	1
+war	strife	1
+war	strike	1
+war	struggle	1
+war	tension	1
+war	terrorism	0
+war	unrest	0
+war	uprising	0
+war	violence	1
+warehousing	government security	0
+warplane	air force	1
+warplane	air power	1
+warplane	aircraft carrier	0
+warplane	aircraft	1
+warplane	airline	0
+warplane	airplane	1
+warplane	arm	1
+warplane	armour	0
+warplane	army base	0
+warplane	artillery	0
+warplane	bomb	0
+warplane	bomber	1
+warplane	bps	1
+warplane	buildup	0
+warplane	carrier	1
+warplane	command	0
+warplane	comrade	0
+warplane	crew member	0
+warplane	crew	1
+warplane	democrat	0
+warplane	explosive	0
+warplane	force	1
+warplane	forwarders	0
+warplane	freighter	0
+warplane	frigate	0
+warplane	gun	0
+warplane	gunmen	0
+warplane	helicopter	0
+warplane	hijacker	0
+warplane	jet	0
+warplane	kobo	0
+warplane	launcher	0
+warplane	massing	0
+warplane	military installation	1
+warplane	military personnel	0
+warplane	missile	0
+warplane	multinationals	0
+warplane	overflights	0
+warplane	patrol	1
+warplane	patrolling	0
+warplane	pest	0
+warplane	pilgrim	0
+warplane	pilot	0
+warplane	plane	1
+warplane	radar	0
+warplane	rebel	0
+warplane	rocket launcher	0
+warplane	security force	1
+warplane	selector	0
+warplane	ship	0
+warplane	soldier	0
+warplane	submarine	0
+warplane	tank	0
+warplane	torpedo	0
+warplane	train	0
+warplane	troop	0
+warplane	vehicle	1
+warplane	vessel	0
+warplane	warplane	1
+warplane	warplanes	1
+warplane	warship	1
+warplane	weapon	1
+warplane	world leader	0
+warrant	government security	1
+warrant	loan	0
+warship	warplane	1
+wastewater	treatment	0
+water supply	treatment	0
+water	goods	0
+weakness	liquidity	0
+weakness	performance	0
+weapon	warplane	1
+wheat	goods	1
+willingness	argument	0
+win	match	0
+wing	federation	0
+winner	match	0
+witness	argument	0
+woo	sentence	0
+wool	goods	1
+work	programme	0
+workweek	market price	0
+world leader	warplane	0
+worry	list	0
+wrangle	argument	1
+wrangling	argument	1
+wrongdoing	argument	0
+year end	central bank	0
+yesterday	central bank	0
+yield	bill	0
+zone	town	0

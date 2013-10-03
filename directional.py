@@ -8,6 +8,7 @@ import math
 RANKINGTYPE = 'simple'
 
 def check(u,v):
+    return
     """
     Force checks that u and v have the same dimensions, and that
     both are numpy float arrays.
@@ -116,6 +117,9 @@ def APinc(u,v):
     rel = relPrime(v)[URanking]
     result = np.dot(precs[:onFeatures],rel[:onFeatures]) / onFeatures
     return result
+
+def balAPinc(u, v):
+    return np.sqrt(lin(u, v) * APinc(u, v))
 
 def myrank(u, tiebreaking=RANKINGTYPE):
     """
