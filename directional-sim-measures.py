@@ -96,27 +96,10 @@ def vLength(u):
     return (u != 0).sum()
 
 def relPrime(v):
-    # print
-    # print "v:"
-    # print v
-    # print
-    # print "ranked:"
-    # print myrank(v)
-    # print
-    # print "ordering:"
-    # print v[myrank(v)]
-    # print
-    # GBT: I think I found out what's wrong. The problem is that myrank returns the indices of a sorted array, NOT the rank of each feature:
-    # [0, 2, 1, 1] ==> [1, 2, 3, 0] (so one can produce "2, 1, 1, 0")
-    # This is what we operate on, but it's not right. What we need instead is a function that gives us the rank of each feature:
-    # [0, 2, 1, 1] ==> [3, 0, 1, 2] (or the same but starting with 1)
-    # This way, we can apply the relprime formula directly. Right?
-    VRanking = myrank(myrank(v))
-    print "VRanking:", VRanking
+    VRanking = np.argsort(myrank(v))
     result = 1 - ((VRanking + 1) / (vLength(v) + 1.))
-    newresult=result[myrank(v)]
-    #newresult[(v[myrank(v)] == 0)] = 0
-    return newresult
+    result[v == 0] = 0
+    return result
 
 def precAtAllRanks(u,v):
     includedFeatures = (u != 0) & (v != 0)
@@ -128,15 +111,9 @@ def APinc(u,v):
     check(u,v)
     onFeatures = vLength(u)
     precs = precAtAllRanks(u,v)
-    URanking = myrank(u) # watch out! If we do a random breaking of ties, we will need to make sure that the random order is the same for u and v
-    # print
-    print "precs", precs
-    # print "rels"
-    # print relPrime(v)
-    #rel = relPrime(v)[URanking]
-    rel = relPrime(v)
-    print "rels after 984981"
-    print rel
+    # watch out! If we do a random breaking of ties, we will need to make sure that the random order is the same for u and v
+    URanking = myrank(u)
+    rel = relPrime(v)[URanking]
     result = np.dot(precs[:onFeatures],rel[:onFeatures]) / onFeatures
     return result
 
@@ -186,8 +163,9 @@ def rank_averageties(a):
     return newarray
 
 data = np.genfromtxt('test', delimiter=' ')
-print(data)
-u = data[0]; v = data[1]
+#print(data)
+u = data[0]
+v = data[1]
 #u = np.array([1,0,3],dtype=float)
 #v = np.array([1,2,0],dtype=float)
 # print "features: should be"
@@ -207,6 +185,7 @@ u = data[0]; v = data[1]
 # print "ClarkeDE: 0.5"
 # print ClarkeDE(u,v)
 # print "balAPinc: still missing"
-#print "APinc(u, v) =", APinc(u,v)
-#print "APinc(u, u) =", APinc(u,u)
+print "APinc(u, v) =", APinc(u,v)
+print "APinc(v, u) =", APinc(v,u)
+print "APinc(u, u) =", APinc(u,u)
 print "APinc(v, v) =", APinc(v,v)
