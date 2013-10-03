@@ -162,30 +162,32 @@ def rank_averageties(a):
             dupcount = 0
     return newarray
 
-data = np.genfromtxt('test', delimiter=' ')
-#print(data)
-u = data[0]
-v = data[1]
-#u = np.array([1,0,3],dtype=float)
-#v = np.array([1,2,0],dtype=float)
-# print "features: should be"
-# print "(array([ 1.,  2.]), array([ 1.,  1.]))"
-# print "and is:"
-# print findIntersectedFeatures(u,v)
-# print "cosine: 0.707106781187"
-# print vectorCosine(u,v)
-# print "lin: 0.714285714286"
-# print lin(u,v)
-# print "alpha-skew: 3.9170355472516905"
-# print alphaSkew(u,v)
-# print "weedsprec: 0.75"
-# print WeedsPrec(u,v)
-# print "balPrec: 0.731925054711"
-# print balPrec(u,v)
-# print "ClarkeDE: 0.5"
-# print ClarkeDE(u,v)
-# print "balAPinc: still missing"
-print "APinc(u, v) =", APinc(u,v)
-print "APinc(v, u) =", APinc(v,u)
-print "APinc(u, u) =", APinc(u,u)
-print "APinc(v, v) =", APinc(v,v)
+if __name__ == '__main__':
+    data = np.genfromtxt('test', delimiter=' ')
+    #print(data)
+    u = data[0]
+    v = data[1]
+    #u = np.array([1,0,3],dtype=float)
+    #v = np.array([1,2,0],dtype=float)
+    # print "features: should be"
+    # print "(array([ 1.,  2.]), array([ 1.,  1.]))"
+    # print "and is:"
+    # print findIntersectedFeatures(u,v)
+    # print "cosine: 0.707106781187"
+    # print vectorCosine(u,v)
+    # print "lin: 0.714285714286"
+    # print lin(u,v)
+    # print "alpha-skew: 3.9170355472516905"
+    # print alphaSkew(u,v)
+    # print "weedsprec: 0.75"
+    # print WeedsPrec(u,v)
+    # print "balPrec: 0.731925054711"
+    # print balPrec(u,v)
+    # print "ClarkeDE: 0.5"
+    # print ClarkeDE(u,v)
+    # print "balAPinc: still missing"
+    print "APinc(u, v) =", APinc(u,v)
+    print "APinc(v, u) =", APinc(v,u)
+    print "APinc(u, u) =", APinc(u,u)
+    print "APinc(v, v) =", APinc(v,v)
+
