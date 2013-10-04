@@ -27,7 +27,7 @@ def findIntersectedFeatures(u,v):
     inters_v = v[indices]
     return (inters_u, inters_v)
 
-def vectorCosine(u,v):
+def cosine(u, v):
     check(u,v)
     dot = np.dot(u,v)
     u_modulus = np.sqrt((u*u).sum())
@@ -36,7 +36,7 @@ def vectorCosine(u,v):
     cos_angle = dot / (u_modulus * v_modulus)
     return cos_angle
 
-def lin(u,v):
+def lin(u, v):
     check(u,v)
     (inters_u, inters_v) = findIntersectedFeatures(u,v)
     tmp = inters_u + inters_v
@@ -44,17 +44,14 @@ def lin(u,v):
     return result
 
 def alphaSkew(u,v,alpha=.99):
-    check(u,v)
-    result = 0
-    oneminusalpha = 1 - alpha
-    for i in range(len(u)):
-        f_u = u[i]
-        f_v = v[i]
-        if not f_v == 0:
-            # if f_v is zero, everything goes to zero (to avoid error caused by log(0))
-            tmp1 = math.log(f_v / ( alpha * f_u + oneminusalpha * f_v ) ) * f_v
-            result += tmp1
-    return result
+    check(u, v)
+    # skewed middle distribution
+    M = alpha * u + (1 - alpha) * v
+    # make sure we avoid sections where alphaSkew is undefined
+    v_ = v[v != 0]
+    M_ = M[v != 0]
+    # alphaskew as is
+    return np.sum(v_ * np.log(v_ / M_))
 
 def WeedsPrec(u,v):
     check(u,v)
@@ -80,14 +77,8 @@ def ClarkeDE(u,v):
     return result
 
 def findIntersectedFeatures(u,v):
-    common = []
-    for i in range(len(u)):
-        if not (u[i] == 0) and not (v[i] == 0):
-            common.append(i)
-    indices = np.array(common)
-    inters_u = u[indices]
-    inters_v = v[indices]
-    return (inters_u, inters_v)
+    common = (u != 0) & (v != 0)
+    return u[common], v[common]
 
 def vLength(u):
     """
@@ -95,6 +86,15 @@ def vLength(u):
     vector u.
     """
     return (u != 0).sum()
+
+def norm(u):
+    """
+    Returns the euclidean norm of the vector.
+    """
+    return np.sqrt(u.dot(u.T))
+
+def projection(u, v):
+    return norm(u) * cosine(u, v)
 
 def relPrime(v):
     VRanking = np.argsort(myrank(v))
@@ -107,6 +107,12 @@ def precAtAllRanks(u,v):
     URanking = myrank(u)
     result = includedFeatures[URanking].cumsum() / (np.arange(len(u)) + 1.)
     return result
+
+def AP(u, v):
+    rel = v != 0
+    precs = precAtAllRanks(u, v)
+    return np.dot(precs, rel) / np.sum(rel)
+
 
 def APinc(u,v):
     check(u,v)
@@ -178,7 +184,7 @@ if __name__ == '__main__':
     # print "and is:"
     # print findIntersectedFeatures(u,v)
     # print "cosine: 0.707106781187"
-    # print vectorCosine(u,v)
+    # print cosine(u, v)
     # print "lin: 0.714285714286"
     # print lin(u,v)
     # print "alpha-skew: 3.9170355472516905"
