@@ -77,7 +77,8 @@ def evaluate_space(space_filename):
 
         for (l, r), g in judgements:
             try:
-                predictions.append(asym_measure(space, l, r, measure))
+                score = asym_measure(space, l, r, measure)
+                predictions.append(score)
                 gold.append(g)
             except KeyError:
                 # ignore OOV situations

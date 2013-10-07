@@ -109,9 +109,12 @@ def precAtAllRanks(u,v):
     return result
 
 def AP(u, v):
-    rel = v != 0
-    precs = precAtAllRanks(u, v)
-    return np.dot(precs, rel) / np.sum(rel)
+    rel = (v != 0)
+    included = (u != 0) & (v != 0)
+    URanking = myrank(u)
+    precision_at_ranks = included[URanking].cumsum() / (np.arange(len(u)) + 1.)
+    relevance_at_ranks = rel[URanking]
+    return np.dot(precision_at_ranks, relevance_at_ranks) / np.sum(rel)
 
 
 def APinc(u,v):
