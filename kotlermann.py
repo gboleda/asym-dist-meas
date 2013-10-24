@@ -6,9 +6,12 @@ import numpy as np
 import scipy
 import directional
 
-JUDGEMENTS_FILE = "kotlermann_judgements.txt"
+#JUDGEMENTS_FILE = "kotlermann_judgements.txt"
+JUDGEMENTS_FILE = "noun-noun-entailment-dataset-baroni-etal-eacl2012.txt"
 def read_judgements():
-    lines = open(JUDGEMENTS_FILE).read().split("\r\n")
+    #    lines = open(JUDGEMENTS_FILE).read().split("\r\n")
+    # checked that it still works with kotlermann's data:
+    lines = open(JUDGEMENTS_FILE).read().split("\n")
     cases = [l.strip().split("\t") for l in lines if l.strip()]
     judgements = [(c[:-1], int(c[-1])) for c in cases]
     # skip judgements involving more than one word
@@ -104,7 +107,7 @@ def evaluate_space(space_filename):
     print
 
 
-
+    # outputs evaluation measures for all semantic spaces given as arguments
 if __name__ == '__main__':
     print "space                            measure            AP      P@1000   R@1000"
     for space_filename in sys.argv[1:]:
