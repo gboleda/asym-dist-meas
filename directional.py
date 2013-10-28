@@ -17,16 +17,6 @@ def check(u,v):
     assert u.dtype == float, "u vector not of float type"
     assert v.dtype == float, "v vector not of float type"
 
-def findIntersectedFeatures(u,v):
-    common = []
-    for i in range(len(u)):
-        if not (u[i] == 0) and not (v[i] == 0):
-            common.append(i)
-    indices = np.array(common)
-    inters_u = u[indices]
-    inters_v = v[indices]
-    return (inters_u, inters_v)
-
 def cosine(u, v):
     check(u,v)
     dot = np.dot(u,v)
