@@ -92,7 +92,6 @@ def evaluate_space(space_filename):
     space = read_space(space_filename)
     judgements = read_judgements()
 
-
     for m_i, measure in enumerate(MEASURES):
         gold = []
         predictions = []
@@ -131,6 +130,7 @@ def evaluate_space_accuracy_balAPinc(space_filename, threshold):
     _vector_cache = {}
     space = read_space(space_filename)
     judgements = read_judgements()
+    
     oov = 0
     measure = MEASURES[6]
     if measure.func_name != 'balAPinc':
