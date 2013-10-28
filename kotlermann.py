@@ -153,7 +153,7 @@ def evaluate_space_accuracy_balAPinc(space_filename, threshold):
     predictions = np.array(predictions)
     predbool = predictions > threshold # this is also boolean
     matches = float( ( (gold == False) & (predbool == False) ).sum() +  ( (gold == True) & (predbool == True) ).sum() )
-    accuracy = matches / gold.size
+    accuracy = (matches / gold.size)*100
 
     # print "gold", gold
     # print "predictions", predictions
