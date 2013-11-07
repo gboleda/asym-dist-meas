@@ -4,6 +4,7 @@ import sys
 import cPickle
 import numpy as np
 import pylab
+from os.path import basename
 from matplotlib.backends.backend_pdf import PdfPages
 from itertools import izip, count
 
@@ -15,15 +16,15 @@ STACKED_BARCHART = True
 SCATTERPLOT = True
 DIFFERENCE_HIST = False
 SAMESIGN_HIST = False
-PLOT_ONLY_SELECT_FEATURES = False
+PLOT_ONLY_SELECT_FEATURES = True
 
 NUM_PAIRS = 10
 NUM_TOP_FEATS = 10
 NUM_DISCRIM_FEATS = 20
 
 
-DATA_FILE = "data/randomized-entailing-baronietal.txt"
-#DATA_FILE = "data/randomized-nonentailing-baronietal.txt"
+#DATA_FILE = "data/randomized-entailing-baronietal.txt"
+DATA_FILE = "data/randomized-nonentailing-baronietal.txt"
 
 COLORS = COLORS["nonentail" in DATA_FILE]
 
@@ -42,7 +43,12 @@ def toarray(vm):
 pylab.axhline(y=0, color="black")
 pylab.axvline(x=0, color="black")
 
-pp = PdfPages('multipage.pdf')
+if 'nonentail' in DATA_FILE:
+    outfilename = 'viz/nonentailing.%s.pdf' % basename(sys.argv[1])
+else:
+    outfilename = 'viz/entailing.%s.pdf' % basename(sys.argv[1])
+print "Saving to %s..." % outfilename
+pp = PdfPages(outfilename)
 
 all_left = []
 all_right = []
