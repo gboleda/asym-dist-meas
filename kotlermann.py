@@ -6,8 +6,8 @@ import numpy as np
 import scipy
 import directional
 
-#JUDGEMENTS_FILE = "kotlermann_judgements.txt"
-JUDGEMENTS_FILE = "noun-noun-entailment-dataset-baroni-etal-eacl2012.txt"
+#JUDGEMENTS_FILE = "data/kotlermann_judgements.txt"
+JUDGEMENTS_FILE = "data/noun-noun-entailment-dataset-baroni-etal-eacl2012.txt"
 #JUDGEMENTS_FILE = "noun-noun-test.txt"
 
 # to control whether we want to do the "longest vector" trick or not (Baroni's dataset has short POS)
