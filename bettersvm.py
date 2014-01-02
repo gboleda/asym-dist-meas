@@ -22,17 +22,16 @@ logging.basicConfig(
 # kernel options are 'linear', 'poly', 'rbf', 'sigmoid'
 KERNEL = 'poly'
 DEGREE = 3 # polynomial degree. ignored elsewhere
-REGULARLIZATION = 1
 NUM_CROSS_VALIDATION = 50
 RANDOM_SEED = 10
 
 
 def classifier_factory(classifier_type):
     if classifier_type == 'logreg':
-        return LogisticRegression(C=REGULARLIZATION, penalty='l1', tol=0.001)
+        return LogisticRegression(penalty='l1')
     elif classifier_type == 'svm':
-        #return svm.SVC(kernel=KERNEL, C=REGULARLIZATION, degree=DEGREE, tol=1.5, probability=True)
-        return svm.SVC(kernel=KERNEL, C=REGULARLIZATION, degree=DEGREE, tol=1.5)
+        #return svm.SVC(kernel=KERNEL, degree=DEGREE, tol=1.5, probability=True)
+        return svm.SVC(kernel=KERNEL, degree=DEGREE, tol=1.5)
     elif classifier_type == 'dummy':
         return DummyClassifier('most_frequent')
     else:
@@ -93,9 +92,146 @@ def add_features(dataframe, space, feature_generator):
     logging.info('Done loading features.')
     return dataframe
 
+def compute_unseen_accuracy(data, klassifier):
+    # shuffle things around
+    #s = shuffle(xrange(len(data)), random_state=RANDOM_SEED)
+
+    s = np.arange(len(data))
+    # k, let's do some classifying
+    logging.info("Starting to classify... Splitting into %d folds." % NUM_CROSS_VALIDATION)
+    scores = []
+    total_right = 0
+    total_total = 0
+    #for i, (train, test) in enumerate(cross_validation.KFold(len(data), n_folds=NUM_CROSS_VALIDATION, indices=True)):
+    num_steps = len(set(data['word1']))
+
+    for i, (word1, test_split) in enumerate(data.groupby('word1')):
+        train_split = data[data['word1'] != word1]
+
+        test_X = np.array(list(test_split['features']))
+        test_Y = np.array(test_split['target'])
+
+        banned_words1 = set(test_split['word1'])
+        banned_words2 = set(test_split['word2'])
+
+        word2_mask = train_split['word2'].map(lambda x: x not in banned_words2)
+        #print np.sum(word1_mask), np.sum(word2_mask)
+        train_view = train_split[word2_mask]
+        train_X = np.array(list(train_view['features']))
+        train_Y = np.array(train_view['target'])
+
+        logging.debug("Learning %d/%d [%s training matrix]" % (i + 1, num_steps, train_X.shape))
+
+        learned = klassifier.fit(train_X, train_Y)
+
+        logging.debug("Testing '%s' %d/%d [%s testing matrix]" % (word1, i + 1, num_steps, test_X.shape))
+
+        #probs = learned.predict_proba(test_X)
+        labels = learned.predict(test_X)
+        acc = np.sum(labels == test_Y) / float(len(labels))
+        total_right += np.sum(labels == test_Y)
+        total_total += len(labels)
+        scores.append(acc)
+
+        logging.debug("Processed row %3d/%3d (%2.1f); acc: %.3f; running acc: %.3f" % (i + 1, num_steps, 100. * (i + 1.) / NUM_CROSS_VALIDATION, acc, np.mean(scores)))
+
+    logging.info("Done classifying!")
+    logging.info("Classifier: %s" % klassifier)
+    logging.info("Accuracy: %0.3f +/- %0.3f" % (np.mean(scores), 2 * np.std(scores)))
+    logging.info("Accuracy: %0.3f " % (float(total_right) / total_total))
+
+def findfeatures(data, klassifier, space, rmapper, num_components):
+    train_X = np.array(list(data['features']))
+    train_Y = np.array(data['target'])
+    learned = klassifier.fit(train_X, train_Y)
+
+    m = space.get_cooccurrence_matrix().get_mat()
+
+    part1 = learned.coef_[:,:num_components]
+    part2 = learned.coef_[:,num_components:]
+    
+    keepfeatures = (np.abs(part1) > 1e-3) | (np.abs(part2) > 1e-3)
+    print np.sum(keepfeatures)
+    import ipdb
+    ipdb.set_trace()
+
+    return
+
+    #s = m.argsort(axis=0)
+
+    NUM_SELECT = 250
+
+    lookup = {i : x for i, (x, y) in enumerate([l.strip().split("\t") for l in open("/var/local/roller/data/dist-spaces/bigspace/vectorspace.cols")])}
+    tm = space.operations[1]._DimensionalityReductionOperation__transmat.get_mat().todense()
+    s = tm.argsort(axis=0)
+
+    diff1 = tm[:,:num_components] * learned.coef_[:,:num_components].T
+    diff2 = tm[:,:num_components] * learned.coef_[:,num_components:].T
+
+    g1 = diff1.sum(axis=1).A.T[0]
+    g2 = diff2.sum(axis=1).A.T[0]
+    g3 = g1 + g2
+
+    if TYPE == 'pos':
+        keys1 = [lookup[y] for y in g1.argsort()[-NUM_SELECT:]]
+        keys2 = [lookup[y] for y in g2.argsort()[-NUM_SELECT:]]
+    elif TYPE == 'neg':
+        keys1 = [lookup[y] for y in g1.argsort()[:NUM_SELECT]]
+        keys2 = [lookup[y] for y in g2.argsort()[:NUM_SELECT]]
+    elif TYPE == 'abs':
+        keys1 = [lookup[y] for y in np.abs(g1).argsort()[-NUM_SELECT:]]
+        keys2 = [lookup[y] for y in np.abs(g2).argsort()[-NUM_SELECT:]]
+    for x in set(keys):
+        print x
+
+    for k, klass in rmapper.iteritems():
+        break
+        g1 = diff1[:,k].A.T[0]
+        g2 = diff2[:,k].A.T[0]
+        if TYPE == 'pos':
+            keys1 = [lookup[y] for y in g1.argsort()[-NUM_SELECT:]]
+            keys2 = [lookup[y] for y in g2.argsort()[-NUM_SELECT:]]
+        elif TYPE == 'neg':
+            keys1 = [lookup[y] for y in g1.argsort()[:NUM_SELECT]]
+            keys2 = [lookup[y] for y in g2.argsort()[:NUM_SELECT]]
+        elif TYPE == 'abs':
+            keys1 = [lookup[y] for y in np.abs(g1).argsort()[-NUM_SELECT:]]
+            keys2 = [lookup[y] for y in np.abs(g2).argsort()[-NUM_SELECT:]]
+        for x in set(keys1 + keys2):
+            print x
+        print
+
+    # for t in xrange(num_components):
+    #     break
+    #     wordweights = s[:,t].T.A[0]
+    #     for x in reversed(np.concatenate([wordweights[:NUM_SHOW], wordweights[-NUM_SHOW:]])):
+    #         print "       %2.3f    %5d   %s" % (tm[x,t], x, lookup[x])
+    #     import ipdb
+    #     ipdb.set_trace()
+    # for c, row in enumerate(learned.coef_):
+    #     klass = rmapper[c]
+    #     print "Relevant features to '%s'-v-all classifier:" % klass
+    #     most_rela = np.abs(row).argsort()[-NUM_SHOW:]
+    #     print "    weight   topic"
+    #     for j in reversed(most_rela):
+    #         print "    %2.3f     %d" % (row[j], j)
+    #         wordweights = s[:,j % num_components].T.A[0]
+    #         import ipdb
+    #         ipdb.set_trace()
+    #         for i in xrange(NUM_SHOW):
+    #             x = wordweights[-(i+1)]
+    #             y = wordweights[i]
+    #             print "       %-2.3f    %5d   %-15s         %-2.3f    %5d   %-10s" % (tm[x,j % num_components], x, lookup[x][:15], tm[y, j % num_components], y, lookup[y])
+
+
+
+
+
 def main():
     parser = argparse.ArgumentParser(
                 description='Classifies relations using a semantic space as features.')
+    parser.add_argument('action', choices=('unseen', 'cv', 'findfeatures'), default='unseen',
+                        help='Action to perform.')
     parser.add_argument('-d', '--data', type=argparse.FileType('r'),
                         help='Data to classify.')
     parser.add_argument('-s', '--space', type=argparse.FileType('r'),
@@ -108,6 +244,8 @@ def main():
                         help='Number of vector space dimensions to use (default all).')
     parser.add_argument('-f', '--features', choices=('vectors', 'normvectors', 'diffs', 'normdiffs'),
                         help='Feature space for classifier.')
+    parser.add_argument('-p', '--predictions', action='store_true',
+                        help='Output a CSV of model predictions')
 
     args = parser.parse_args()
 
@@ -116,6 +254,7 @@ def main():
 
     logging.info('Reading table...')
     data = pd.read_table(args.data, names=('word1', 'info', 'relation', 'word2'))
+    #data = pd.read_table(args.data, names=('word1', 'word2', 'entails'))
     logging.info('Reading space...')
     space = pickle.load(args.space)
 
@@ -134,54 +273,19 @@ def main():
     # add in the features
     data = add_features(data, space, feature_generator)
     data = data[data['features'].map(lambda x: x is not None)]
-    logging.info("%d pairs to classify..." % len(data))
+    logging.info("%d pairs with features..." % len(data))
 
-    # shuffle things around
-    #s = shuffle(xrange(len(data)), random_state=RANDOM_SEED)
-    s = np.arange(len(data))
-
-    # k, let's do some classifying
-    logging.info("Starting to classify... Splitting into %d folds." % NUM_CROSS_VALIDATION)
-    scores = []
-    total_right = 0
-    total_total = 0
-    for i, (train, test) in enumerate(cross_validation.KFold(len(data), n_folds=NUM_CROSS_VALIDATION, indices=True)):
-        train_split = data.iloc[s[train]]
-        test_split = data.iloc[s[test]]
-
-        test_X = np.array(list(test_split['features']))
-        test_Y = np.array(test_split['target'])
-
-        banned_words1 = set(test_split['word1'])
-        banned_words2 = set(test_split['word2'])
-
-        word1_mask = train_split['word1'].map(lambda x: x not in banned_words1)
-        word2_mask = train_split['word2'].map(lambda x: x not in banned_words2)
-        #print np.sum(word1_mask), np.sum(word2_mask)
-        mask = word1_mask & word2_mask
-        train_view = train_split[mask]
-        train_X = np.array(list(train_view['features']))
-        train_Y = np.array(train_view['target'])
-
-        logging.debug("Learning %d/%d [%s training matrix]" % (i + 1, NUM_CROSS_VALIDATION, train_X.shape))
-
-        learned = klassifier.fit(train_X, train_Y)
-
-        logging.debug("Testing  %d/%d [%s testing matrix]" % (i + 1, NUM_CROSS_VALIDATION, test_X.shape))
-
-        #probs = learned.predict_proba(test_X)
-        labels = learned.predict(test_X)
-        acc = np.sum(labels == test_Y) / float(len(labels))
-        total_right += np.sum(labels == test_Y)
-        total_total += len(labels)
-        scores.append(acc)
-
-        logging.debug("Processed row %3d/%3d (%2.1f); acc: %.3f; running acc: %.3f" % (i + 1, NUM_CROSS_VALIDATION, 100. * (i + 1.) / NUM_CROSS_VALIDATION, acc, float(total_right)/total_total))
-
-    logging.info("Done classifying!")
-    logging.info("Classifier: %s" % klassifier)
-    logging.info("Accuracy: %0.3f +/- %0.3f" % (np.mean(scores), 2 * np.std(scores)))
-    logging.info("Accuracy: %0.3f +/- %0.3f" % (np.mean(scores), 2 * np.std(scores)))
+    if args.action == 'unseen':
+        compute_unseen_accuracy(data, klassifier)
+    elif args.action == 'cv':
+        pass
+    elif args.action == 'findfeatures':
+        num_components = args.numfeatures and args.numfeatures or space.element_shape[0]
+        findfeatures(data, klassifier, space, target_unmapper, num_components)
+    elif args.action == 'train':
+        pass
+    else:
+        raise ValueError("Invalid action, '%s'!" % args.action)
 
 
 if __name__ == '__main__':
