@@ -29,9 +29,12 @@ RANDOM_SEED = 10
 def classifier_factory(classifier_type):
     if classifier_type == 'logreg':
         return LogisticRegression(penalty='l1')
+    elif classifier_type == 'lsvm':
+        return svm.LinearSVC()
     elif classifier_type == 'svm':
         #return svm.SVC(kernel=KERNEL, degree=DEGREE, tol=1.5, probability=True)
-        return svm.SVC(kernel=KERNEL, degree=DEGREE, tol=1.5)
+        #return svm.SVC(kernel=KERNEL, degree=DEGREE)
+        return svm.SVC(kernel=KERNEL, degree=DEGREE, tol=1.5, cache_size=2048)
     elif classifier_type == 'dummy':
         return DummyClassifier('most_frequent')
     else:
@@ -92,21 +95,93 @@ def add_features(dataframe, space, feature_generator):
     logging.info('Done loading features.')
     return dataframe
 
-def compute_unseen_accuracy(data, klassifier):
+def compute_crossval_accuracy(data, klassifier, unmapper, nfolds=20):
+    # shuffle things around
+    s = shuffle(xrange(len(data)), random_state=RANDOM_SEED)
+    # k, let's do some classifying
+    scores = []
+    total_right = 0
+    total_total = 0
+    num_steps = nfolds
+    all_predictions = []
+    all_answers = []
+    logging.info("Starting to classify (crossval)... Splitting into %d folds." % num_steps)
+
+    splits = []
+
+    for i, (train, test) in enumerate(cross_validation.KFold(len(data), n_folds=nfolds, indices=True)):
+        train_split = data.iloc[s[train]]
+        test_split = data.iloc[s[test]]
+
+        test_X = np.array(list(test_split['features']))
+        test_Y = np.array(test_split['target'])
+
+        train_X = np.array(list(train_split['features']))
+        train_Y = np.array(train_split['target'])
+
+        logging.debug("Learning %d/%d [%s training matrix]" % (i + 1, num_steps, train_X.shape))
+
+        learned = klassifier.fit(train_X, train_Y)
+
+        logging.debug("Testing %d/%d [%s testing matrix]" % (i + 1, num_steps, test_X.shape))
+
+        percent_complete = 100. * (i + 1.) / num_steps
+
+        #probs = learned.decision_function(test_X)
+        labels = learned.predict(test_X)
+        acc = np.sum(labels == test_Y) / float(len(labels))
+        total_right += np.sum(labels == test_Y)
+        total_total += len(labels)
+        scores.append(acc)
+        all_predictions += list(labels)
+        all_answers += list(test_Y)
+        running_acc = np.sum(np.array(all_predictions) == np.array(all_answers)) / float(len(all_answers))
+
+        test_split['prediction'] = labels
+        test_split['prediction_l'] = map(unmapper.__getitem__, labels)
+        test_split['ntraining'] = train_X.shape[0]
+        test_split['nfolds'] = nfolds
+        #for j, k in unmapper.iteritems():
+        #    test_split['p_' + k] = probs[:,j]
+        splits.append(test_split)
+        logging.debug("Processed row %3d/%3d (%2.1f); acc: %.3f; running acc: %.3f" % (i + 1, num_steps, percent_complete, acc, running_acc))
+
+    everything = pd.concat(splits)
+    del everything['features']
+    everything.to_csv(sys.stdout, index=False)
+
+    logging.info("Done classifying!")
+    logging.info("Classifier: %s" % klassifier)
+    logging.info("Accuracy: %0.3f +/- %0.3f" % (np.mean(scores), 2 * np.std(scores)))
+    logging.info("Accuracy: %0.3f " % (float(total_right) / total_total))
+    logging.info("Confusion Matrix:")
+    logging.info("         " + " ".join("%8s" % k for i, k in unmapper.iteritems()))
+    confusion = confusion_matrix(all_answers, all_predictions)
+    for i, k in unmapper.iteritems():
+        s = ("%8s " % k) + " ".join("%8d" % v for v in confusion[i,:])
+        logging.info(s)
+
+
+
+def compute_unseen_accuracy(data, klassifier, unmapper, stratify_column='word1', cheating_factor_allowed=0.0):
     # shuffle things around
     #s = shuffle(xrange(len(data)), random_state=RANDOM_SEED)
 
     s = np.arange(len(data))
     # k, let's do some classifying
-    logging.info("Starting to classify... Splitting into %d folds." % NUM_CROSS_VALIDATION)
     scores = []
     total_right = 0
     total_total = 0
     #for i, (train, test) in enumerate(cross_validation.KFold(len(data), n_folds=NUM_CROSS_VALIDATION, indices=True)):
-    num_steps = len(set(data['word1']))
+    num_steps = len(set(data[stratify_column]))
+    all_predictions = []
+    all_answers = []
+    logging.info("Starting to classify... Splitting into %d folds." % num_steps)
 
-    for i, (word1, test_split) in enumerate(data.groupby('word1')):
-        train_split = data[data['word1'] != word1]
+    splits = []
+
+    for i, (columnkey, test_split) in enumerate(data.groupby(stratify_column)):
+        train_split = data[data[stratify_column] != columnkey]
 
         test_X = np.array(list(test_split['features']))
         test_Y = np.array(test_split['target'])
@@ -114,9 +189,20 @@ def compute_unseen_accuracy(data, klassifier):
         banned_words1 = set(test_split['word1'])
         banned_words2 = set(test_split['word2'])
 
+        word1_mask = train_split['word1'].map(lambda x: x not in banned_words1)
         word2_mask = train_split['word2'].map(lambda x: x not in banned_words2)
-        #print np.sum(word1_mask), np.sum(word2_mask)
-        train_view = train_split[word2_mask]
+        both_mask = word1_mask & word2_mask
+        number_banned = (len(both_mask) - np.sum(both_mask))
+        number_cheats = 0
+
+        cheat_randomizer = np.random.rand(len(both_mask)) < cheating_factor_allowed
+        number_cheats = np.sum(both_mask | cheat_randomizer) - np.sum(both_mask)
+        both_mask = both_mask | cheat_randomizer
+
+
+        logging.debug("%d 'cheating' pairs available." % number_banned)
+        logging.debug("%d 'cheating' pairs allowed." % number_cheats)
+        train_view = train_split[both_mask]
         train_X = np.array(list(train_view['features']))
         train_Y = np.array(train_view['target'])
 
@@ -124,21 +210,47 @@ def compute_unseen_accuracy(data, klassifier):
 
         learned = klassifier.fit(train_X, train_Y)
 
-        logging.debug("Testing '%s' %d/%d [%s testing matrix]" % (word1, i + 1, num_steps, test_X.shape))
+        logging.debug("Testing '%s' %d/%d [%s testing matrix]" % (columnkey, i + 1, num_steps, test_X.shape))
 
-        #probs = learned.predict_proba(test_X)
+        percent_complete = 100. * (i + 1.) / num_steps
+
+        probs = learned.predict_proba(test_X)
         labels = learned.predict(test_X)
         acc = np.sum(labels == test_Y) / float(len(labels))
         total_right += np.sum(labels == test_Y)
         total_total += len(labels)
         scores.append(acc)
+        all_predictions += list(labels)
+        all_answers += list(test_Y)
+        running_acc = np.sum(np.array(all_predictions) == np.array(all_answers)) / float(len(all_answers))
 
-        logging.debug("Processed row %3d/%3d (%2.1f); acc: %.3f; running acc: %.3f" % (i + 1, num_steps, 100. * (i + 1.) / NUM_CROSS_VALIDATION, acc, np.mean(scores)))
+        test_split['prediction'] = labels
+        test_split['prediction_l'] = map(unmapper.__getitem__, labels)
+        test_split['ntraining'] = train_X.shape[0]
+        test_split['nbanned'] = number_banned
+        test_split['ncheats'] = number_cheats
+        test_split['percent_cheats'] = float(number_cheats) / number_banned
+        test_split['percent_cheats_requested'] = cheating_factor_allowed
+        for j, k in unmapper.iteritems():
+            test_split['p_' + k] = probs[:,j]
+        splits.append(test_split)
+        logging.debug("Processed row %3d/%3d (%2.1f); acc: %.3f; running acc: %.3f" % (i + 1, num_steps, percent_complete, acc, running_acc))
+
+    everything = pd.concat(splits)
+    del everything['features']
+    everything.to_csv(sys.stdout, index=False)
 
     logging.info("Done classifying!")
     logging.info("Classifier: %s" % klassifier)
     logging.info("Accuracy: %0.3f +/- %0.3f" % (np.mean(scores), 2 * np.std(scores)))
     logging.info("Accuracy: %0.3f " % (float(total_right) / total_total))
+    logging.info("Confusion Matrix:")
+    logging.info("         " + " ".join("%8s" % k for i, k in unmapper.iteritems()))
+    confusion = confusion_matrix(all_answers, all_predictions)
+    for i, k in unmapper.iteritems():
+        s = ("%8s " % k) + " ".join("%8d" % v for v in confusion[i,:])
+        logging.info(s)
+
 
 def findfeatures(data, klassifier, space, rmapper, num_components):
     train_X = np.array(list(data['features']))
@@ -149,14 +261,7 @@ def findfeatures(data, klassifier, space, rmapper, num_components):
 
     part1 = learned.coef_[:,:num_components]
     part2 = learned.coef_[:,num_components:]
-    
     keepfeatures = (np.abs(part1) > 1e-3) | (np.abs(part2) > 1e-3)
-    print np.sum(keepfeatures)
-    import ipdb
-    ipdb.set_trace()
-
-    return
-
     #s = m.argsort(axis=0)
 
     NUM_SELECT = 250
@@ -170,22 +275,11 @@ def findfeatures(data, klassifier, space, rmapper, num_components):
 
     g1 = diff1.sum(axis=1).A.T[0]
     g2 = diff2.sum(axis=1).A.T[0]
-    g3 = g1 + g2
 
-    if TYPE == 'pos':
-        keys1 = [lookup[y] for y in g1.argsort()[-NUM_SELECT:]]
-        keys2 = [lookup[y] for y in g2.argsort()[-NUM_SELECT:]]
-    elif TYPE == 'neg':
-        keys1 = [lookup[y] for y in g1.argsort()[:NUM_SELECT]]
-        keys2 = [lookup[y] for y in g2.argsort()[:NUM_SELECT]]
-    elif TYPE == 'abs':
-        keys1 = [lookup[y] for y in np.abs(g1).argsort()[-NUM_SELECT:]]
-        keys2 = [lookup[y] for y in np.abs(g2).argsort()[-NUM_SELECT:]]
-    for x in set(keys):
-        print x
-
+    TYPE='abs'
     for k, klass in rmapper.iteritems():
-        break
+        if klass != 'hyper':
+            continue
         g1 = diff1[:,k].A.T[0]
         g2 = diff2[:,k].A.T[0]
         if TYPE == 'pos':
@@ -199,38 +293,13 @@ def findfeatures(data, klassifier, space, rmapper, num_components):
             keys2 = [lookup[y] for y in np.abs(g2).argsort()[-NUM_SELECT:]]
         for x in set(keys1 + keys2):
             print x
-        print
-
-    # for t in xrange(num_components):
-    #     break
-    #     wordweights = s[:,t].T.A[0]
-    #     for x in reversed(np.concatenate([wordweights[:NUM_SHOW], wordweights[-NUM_SHOW:]])):
-    #         print "       %2.3f    %5d   %s" % (tm[x,t], x, lookup[x])
-    #     import ipdb
-    #     ipdb.set_trace()
-    # for c, row in enumerate(learned.coef_):
-    #     klass = rmapper[c]
-    #     print "Relevant features to '%s'-v-all classifier:" % klass
-    #     most_rela = np.abs(row).argsort()[-NUM_SHOW:]
-    #     print "    weight   topic"
-    #     for j in reversed(most_rela):
-    #         print "    %2.3f     %d" % (row[j], j)
-    #         wordweights = s[:,j % num_components].T.A[0]
-    #         import ipdb
-    #         ipdb.set_trace()
-    #         for i in xrange(NUM_SHOW):
-    #             x = wordweights[-(i+1)]
-    #             y = wordweights[i]
-    #             print "       %-2.3f    %5d   %-15s         %-2.3f    %5d   %-10s" % (tm[x,j % num_components], x, lookup[x][:15], tm[y, j % num_components], y, lookup[y])
-
-
 
 
 
 def main():
     parser = argparse.ArgumentParser(
                 description='Classifies relations using a semantic space as features.')
-    parser.add_argument('action', choices=('unseen', 'cv', 'findfeatures'), default='unseen',
+    parser.add_argument('action', choices=('unseen', 'crossval', 'findfeatures'), default='unseen',
                         help='Action to perform.')
     parser.add_argument('-d', '--data', type=argparse.FileType('r'),
                         help='Data to classify.')
@@ -238,7 +307,7 @@ def main():
                         help='Vector space.')
     parser.add_argument('-t', '--target', default=-1,
                         help='Target classification field (default last field).')
-    parser.add_argument('-m', '--model', choices=('svm', 'logreg', 'dummy'),
+    parser.add_argument('-m', '--model', choices=('svm', 'logreg', 'dummy', 'lsvm'),
                         help='Model type.')
     parser.add_argument('-n', '--numfeatures', type=int, default=0,
                         help='Number of vector space dimensions to use (default all).')
@@ -246,8 +315,13 @@ def main():
                         help='Feature space for classifier.')
     parser.add_argument('-p', '--predictions', action='store_true',
                         help='Output a CSV of model predictions')
+    parser.add_argument('--cheatingfactor', type=float, default=0.0,
+                        help='Fraction of cheating pairs allowed')
+    parser.add_argument('--stratifier', default='word1', help='Column to stratify on.')
+    parser.add_argument('--folds', default=20, type=int, help='Number of crossval folds')
 
     args = parser.parse_args()
+    logging.info("Run with args '%s'" % args)
 
     klassifier = classifier_factory(args.model)
     feature_generator = partial(generate_features, feattype=args.features, numfeatures=args.numfeatures)
@@ -276,9 +350,9 @@ def main():
     logging.info("%d pairs with features..." % len(data))
 
     if args.action == 'unseen':
-        compute_unseen_accuracy(data, klassifier)
-    elif args.action == 'cv':
-        pass
+        compute_unseen_accuracy(data, klassifier, target_unmapper, stratify_column=args.stratifier, cheating_factor_allowed=args.cheatingfactor)
+    elif args.action == 'crossval':
+        compute_crossval_accuracy(data, klassifier, target_unmapper, nfolds=args.folds)
     elif args.action == 'findfeatures':
         num_components = args.numfeatures and args.numfeatures or space.element_shape[0]
         findfeatures(data, klassifier, space, target_unmapper, num_components)
