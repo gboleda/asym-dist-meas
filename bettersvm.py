@@ -6,6 +6,7 @@ import numpy as np
 import pandas as pd
 import logging
 import argparse
+import datetime
 from functools import partial
 from sklearn import cross_validation, svm
 from sklearn.linear_model import LogisticRegression
@@ -25,6 +26,11 @@ DEGREE = 3 # polynomial degree. ignored elsewhere
 NUM_CROSS_VALIDATION = 50
 RANDOM_SEED = 10
 
+def eta_calculator(starttime, progress):
+    delta = datetime.datetime.now() - starttime
+    eta = delta.total_seconds() * ((1. - progress)/progress)
+    return datetime.timedelta(seconds=eta)
+
 
 def classifier_factory(classifier_type):
     if classifier_type == 'logreg':
@@ -33,8 +39,8 @@ def classifier_factory(classifier_type):
         return svm.LinearSVC()
     elif classifier_type == 'svm':
         #return svm.SVC(kernel=KERNEL, degree=DEGREE, tol=1.5, probability=True)
-        #return svm.SVC(kernel=KERNEL, degree=DEGREE)
-        return svm.SVC(kernel=KERNEL, degree=DEGREE, tol=1.5, cache_size=2048)
+        return svm.SVC(kernel=KERNEL, degree=DEGREE, cache_size=2048)
+        #return svm.SVC(kernel=KERNEL, degree=DEGREE, tol=1.5, cache_size=2048)
     elif classifier_type == 'dummy':
         return DummyClassifier('most_frequent')
     else:
@@ -109,6 +115,7 @@ def compute_crossval_accuracy(data, klassifier, unmapper, nfolds=20):
 
     splits = []
 
+    starttime = datetime.datetime.now()
     for i, (train, test) in enumerate(cross_validation.KFold(len(data), n_folds=nfolds, indices=True)):
         train_split = data.iloc[s[train]]
         test_split = data.iloc[s[test]]
@@ -125,7 +132,7 @@ def compute_crossval_accuracy(data, klassifier, unmapper, nfolds=20):
 
         logging.debug("Testing %d/%d [%s testing matrix]" % (i + 1, num_steps, test_X.shape))
 
-        percent_complete = 100. * (i + 1.) / num_steps
+        percent_complete = (i + 1.) / num_steps
 
         #probs = learned.decision_function(test_X)
         labels = learned.predict(test_X)
@@ -144,7 +151,8 @@ def compute_crossval_accuracy(data, klassifier, unmapper, nfolds=20):
         #for j, k in unmapper.iteritems():
         #    test_split['p_' + k] = probs[:,j]
         splits.append(test_split)
-        logging.debug("Processed row %3d/%3d (%2.1f); acc: %.3f; running acc: %.3f" % (i + 1, num_steps, percent_complete, acc, running_acc))
+        logging.debug("Processed row %3d/%3d (%.3f); acc: %.3f; running acc: %.3f" % (i + 1, num_steps, percent_complete, acc, running_acc))
+        logging.debug("ETA: %s" % eta_calculator(starttime, percent_complete))
 
     everything = pd.concat(splits)
     del everything['features']
@@ -180,6 +188,7 @@ def compute_unseen_accuracy(data, klassifier, unmapper, stratify_column='word1',
 
     splits = []
 
+    starttime = datetime.datetime.now()
     for i, (columnkey, test_split) in enumerate(data.groupby(stratify_column)):
         train_split = data[data[stratify_column] != columnkey]
 
@@ -212,9 +221,9 @@ def compute_unseen_accuracy(data, klassifier, unmapper, stratify_column='word1',
 
         logging.debug("Testing '%s' %d/%d [%s testing matrix]" % (columnkey, i + 1, num_steps, test_X.shape))
 
-        percent_complete = 100. * (i + 1.) / num_steps
+        percent_complete = (i + 1.) / num_steps
 
-        probs = learned.predict_proba(test_X)
+        #probs = learned.predict_proba(test_X)
         labels = learned.predict(test_X)
         acc = np.sum(labels == test_Y) / float(len(labels))
         total_right += np.sum(labels == test_Y)
@@ -231,10 +240,11 @@ def compute_unseen_accuracy(data, klassifier, unmapper, stratify_column='word1',
         test_split['ncheats'] = number_cheats
         test_split['percent_cheats'] = float(number_cheats) / number_banned
         test_split['percent_cheats_requested'] = cheating_factor_allowed
-        for j, k in unmapper.iteritems():
-            test_split['p_' + k] = probs[:,j]
+        #for j, k in unmapper.iteritems():
+        #    test_split['p_' + k] = probs[:,j]
         splits.append(test_split)
-        logging.debug("Processed row %3d/%3d (%2.1f); acc: %.3f; running acc: %.3f" % (i + 1, num_steps, percent_complete, acc, running_acc))
+        logging.debug("Processed row %3d/%3d (%0.3f); acc: %.3f; running acc: %.3f" % (i + 1, num_steps, percent_complete, acc, running_acc))
+        logging.debug("ETA: %s" % eta_calculator(starttime, percent_complete))
 
     everything = pd.concat(splits)
     del everything['features']
@@ -327,7 +337,7 @@ def main():
     feature_generator = partial(generate_features, feattype=args.features, numfeatures=args.numfeatures)
 
     logging.info('Reading table...')
-    data = pd.read_table(args.data, names=('word1', 'info', 'relation', 'word2'))
+    data = pd.read_table(args.data)
     #data = pd.read_table(args.data, names=('word1', 'word2', 'entails'))
     logging.info('Reading space...')
     space = pickle.load(args.space)
