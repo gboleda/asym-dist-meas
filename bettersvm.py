@@ -262,7 +262,7 @@ def compute_unseen_accuracy(data, klassifier, unmapper, stratify_column='word1',
         logging.info(s)
 
 
-def findfeatures(data, klassifier, space, rmapper, num_components):
+def findfeatures(data, klassifier, space, rmapper, num_components, findfeaturesmode='abs', findfeaturesclass=None):
     train_X = np.array(list(data['features']))
     train_Y = np.array(data['target'])
     learned = klassifier.fit(train_X, train_Y)
@@ -276,7 +276,8 @@ def findfeatures(data, klassifier, space, rmapper, num_components):
 
     NUM_SELECT = 250
 
-    lookup = {i : x for i, (x, y) in enumerate([l.strip().split("\t") for l in open("/var/local/roller/data/dist-spaces/bigspace/vectorspace.cols")])}
+    #lookup = {i : x for i, (x, y) in enumerate([l.strip().split("\t") for l in open("/var/local/roller/data/dist-spaces/bigspace/vectorspace.cols")])}
+    lookup = {i : x for i, (x, y) in enumerate([l.strip().split("\t") for l in open("/var/local/roller/data/dist-spaces/bigspace/window2.vectorspace.cols ")])}
     tm = space.operations[1]._DimensionalityReductionOperation__transmat.get_mat().todense()
     s = tm.argsort(axis=0)
 
@@ -286,23 +287,26 @@ def findfeatures(data, klassifier, space, rmapper, num_components):
     g1 = diff1.sum(axis=1).A.T[0]
     g2 = diff2.sum(axis=1).A.T[0]
 
-    TYPE='abs'
     for k, klass in rmapper.iteritems():
-        if klass != 'hyper':
+        if findfeaturesclass and klass != findfeaturesclass:
             continue
+        else:
+            print "class '%s':" % klass
         g1 = diff1[:,k].A.T[0]
         g2 = diff2[:,k].A.T[0]
-        if TYPE == 'pos':
+        if findfeaturesmode == 'pos':
             keys1 = [lookup[y] for y in g1.argsort()[-NUM_SELECT:]]
             keys2 = [lookup[y] for y in g2.argsort()[-NUM_SELECT:]]
-        elif TYPE == 'neg':
+        elif findfeaturesmode == 'neg':
             keys1 = [lookup[y] for y in g1.argsort()[:NUM_SELECT]]
             keys2 = [lookup[y] for y in g2.argsort()[:NUM_SELECT]]
-        elif TYPE == 'abs':
+        elif findfeaturesmode == 'abs':
             keys1 = [lookup[y] for y in np.abs(g1).argsort()[-NUM_SELECT:]]
             keys2 = [lookup[y] for y in np.abs(g2).argsort()[-NUM_SELECT:]]
         for x in set(keys1 + keys2):
             print x
+        if not findfeaturesclass:
+            print
 
 
 
@@ -329,6 +333,8 @@ def main():
                         help='Fraction of cheating pairs allowed')
     parser.add_argument('--stratifier', default='word1', help='Column to stratify on.')
     parser.add_argument('--folds', default=20, type=int, help='Number of crossval folds')
+    parser.add_argument('--findfeaturesmode', default='abs', help='abs|pos|neg', choices=('abs', 'pos', 'neg'))
+    parser.add_argument('--findfeaturesclass', help='only find features for a certain classifier')
 
     args = parser.parse_args()
     logging.info("Run with args '%s'" % args)
@@ -365,7 +371,7 @@ def main():
         compute_crossval_accuracy(data, klassifier, target_unmapper, nfolds=args.folds)
     elif args.action == 'findfeatures':
         num_components = args.numfeatures and args.numfeatures or space.element_shape[0]
-        findfeatures(data, klassifier, space, target_unmapper, num_components)
+        findfeatures(data, klassifier, space, target_unmapper, num_components, findfeaturesmode=args.findfeaturesmode, findfeaturesclass=args.findfeaturesclass)
     elif args.action == 'train':
         pass
     else:
