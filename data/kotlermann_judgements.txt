@@ -1,3 +1,4 @@
+word1	word2	entails
 @@ billion baht	central bank	0
 @@ billion baht	liquidity	0
 @@ billion francs	bill	0

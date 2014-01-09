@@ -1,3 +1,4 @@
+word1	word2	entails
 abstraction-n	concept-n	1
 accusation-n	statement-n	1
 ache-n	pain-n	1
