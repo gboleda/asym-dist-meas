@@ -8,6 +8,8 @@ import logging
 import argparse
 import datetime
 from functools import partial
+from random import sample
+from math import ceil
 from sklearn import cross_validation, svm
 from sklearn.linear_model import LogisticRegression
 from sklearn.utils import shuffle
@@ -148,6 +150,7 @@ def compute_crossval_accuracy(data, klassifier, unmapper, nfolds=20):
         test_split['prediction_l'] = map(unmapper.__getitem__, labels)
         test_split['ntraining'] = train_X.shape[0]
         test_split['nfolds'] = nfolds
+        test_split['crossval'] = i + 1
         #for j, k in unmapper.iteritems():
         #    test_split['p_' + k] = probs[:,j]
         splits.append(test_split)
@@ -202,12 +205,13 @@ def compute_unseen_accuracy(data, klassifier, unmapper, stratify_column='word1',
         word2_mask = train_split['word2'].map(lambda x: x not in banned_words2)
         both_mask = word1_mask & word2_mask
         number_banned = (len(both_mask) - np.sum(both_mask))
-        number_cheats = 0
-
-        cheat_randomizer = np.random.rand(len(both_mask)) < cheating_factor_allowed
-        number_cheats = np.sum(both_mask | cheat_randomizer) - np.sum(both_mask)
-        both_mask = both_mask | cheat_randomizer
-
+        number_cheats = min(int(ceil(cheating_factor_allowed * len(both_mask))), number_banned)
+        available_cheats = [j for j, m in enumerate(both_mask) if not m]
+        allowed_cheats = set(sample(available_cheats, number_cheats))
+        allowed_cheats_mask = np.array([(j in allowed_cheats) for j in xrange(len(both_mask))])
+        number_cheats_selected = np.sum(both_mask | allowed_cheats_mask) - np.sum(both_mask)
+        assert number_cheats_selected == number_cheats, (number_cheats_selected, number_cheats)
+        both_mask = both_mask | allowed_cheats_mask
 
         logging.debug("%d 'cheating' pairs available." % number_banned)
         logging.debug("%d 'cheating' pairs allowed." % number_cheats)
@@ -240,6 +244,8 @@ def compute_unseen_accuracy(data, klassifier, unmapper, stratify_column='word1',
         test_split['ncheats'] = number_cheats
         test_split['percent_cheats'] = float(number_cheats) / number_banned
         test_split['percent_cheats_requested'] = cheating_factor_allowed
+        test_split['nfolds'] = num_steps
+        test_split['foldno'] = i + 1
         #for j, k in unmapper.iteritems():
         #    test_split['p_' + k] = probs[:,j]
         splits.append(test_split)
@@ -276,16 +282,13 @@ def findfeatures(data, klassifier, space, rmapper, num_components, findfeaturesm
 
     NUM_SELECT = 250
 
-    #lookup = {i : x for i, (x, y) in enumerate([l.strip().split("\t") for l in open("/var/local/roller/data/dist-spaces/bigspace/vectorspace.cols")])}
-    lookup = {i : x for i, (x, y) in enumerate([l.strip().split("\t") for l in open("/var/local/roller/data/dist-spaces/bigspace/window2.vectorspace.cols ")])}
+    lookup = {i : x for i, (x, y) in enumerate([l.strip().split("\t") for l in open("/var/local/roller/data/dist-spaces/bigspace/vectorspace.cols")])}
+    #lookup = {i : x for i, (x, y) in enumerate([l.strip().split("\t") for l in open("/var/local/roller/data/dist-spaces/bigspace/window2.vectorspace.cols ")])}
     tm = space.operations[1]._DimensionalityReductionOperation__transmat.get_mat().todense()
     s = tm.argsort(axis=0)
 
     diff1 = tm[:,:num_components] * learned.coef_[:,:num_components].T
     diff2 = tm[:,:num_components] * learned.coef_[:,num_components:].T
-
-    g1 = diff1.sum(axis=1).A.T[0]
-    g2 = diff2.sum(axis=1).A.T[0]
 
     for k, klass in rmapper.iteritems():
         if findfeaturesclass and klass != findfeaturesclass:
@@ -303,6 +306,15 @@ def findfeatures(data, klassifier, space, rmapper, num_components, findfeaturesm
         elif findfeaturesmode == 'abs':
             keys1 = [lookup[y] for y in np.abs(g1).argsort()[-NUM_SELECT:]]
             keys2 = [lookup[y] for y in np.abs(g2).argsort()[-NUM_SELECT:]]
+        elif findfeaturesmode == 'posneg':
+            keys1 = [lookup[y] for y in g1.argsort()[-NUM_SELECT:]]
+            keys2 = [lookup[y] for y in g2.argsort()[:NUM_SELECT]]
+        elif findfeaturesmode == 'negpos':
+            keys1 = [lookup[y] for y in g1.argsort()[:NUM_SELECT]]
+            keys2 = [lookup[y] for y in g2.argsort()[-NUM_SELECT:]]
+        else:
+            raise ValueError, "Can't find features mode '%s'" % findfeaturesmode
+
         for x in set(keys1 + keys2):
             print x
         if not findfeaturesclass:
@@ -333,7 +345,7 @@ def main():
                         help='Fraction of cheating pairs allowed')
     parser.add_argument('--stratifier', default='word1', help='Column to stratify on.')
     parser.add_argument('--folds', default=20, type=int, help='Number of crossval folds')
-    parser.add_argument('--findfeaturesmode', default='abs', help='abs|pos|neg', choices=('abs', 'pos', 'neg'))
+    parser.add_argument('--findfeaturesmode', default='abs', help='abs|pos|neg', choices=('abs', 'pos', 'neg', 'posneg', 'negpos'))
     parser.add_argument('--findfeaturesclass', help='only find features for a certain classifier')
 
     args = parser.parse_args()
