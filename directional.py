@@ -20,11 +20,13 @@ def check(u,v):
 def cosine(u, v):
     check(u,v)
     dot = np.dot(u,v)
-    u_modulus = np.sqrt((u*u).sum())
-    v_modulus = np.sqrt((v*v).sum())
-    # cosine of angle between u and v
-    cos_angle = dot / (u_modulus * v_modulus)
-    return cos_angle
+    u_modulus = np.sqrt(u.dot(u))
+    v_modulus = np.sqrt(v.dot(v))
+    modulus = u_modulus * v_modulus
+    if modulus == 0:
+        return 0
+    else:
+        return dot / modulus
 
 def lin(u, v):
     check(u,v)
@@ -56,13 +58,15 @@ def balPrec(u,v):
     result = math.sqrt(lin1*wPrec1)
     return result
 
+def invCL(u, v):
+    return math.sqrt(ClarkeDE(u, v) * (1 - ClarkeDE(v, u)))
+
 def ClarkeDE(u,v):
     check(u,v)
-    (inters_u, inters_v) = findIntersectedFeatures(u,v)
-    numerator = 0
-    for i in range(len(inters_u)):
-        value = min(inters_u[i], inters_v[i])
-        numerator += value
+    if u.sum() == 0:
+        return 0
+    m = np.array([u, v])
+    numerator = np.sum(np.min(m, axis=0))
     result = numerator / u.sum()
     return result
 
@@ -119,6 +123,13 @@ def APinc(u,v):
 
 def balAPinc(u, v):
     return np.sqrt(lin(u, v) * APinc(u, v))
+
+def slqs(u, v):
+    return 1 - median_entropy(u) / median_entropy(v)
+
+def entropy(u):
+    u = u / u.sum()
+    return np.dot(-u, np.log2(u, 2))
 
 def myrank(u, tiebreaking=RANKINGTYPE):
     """

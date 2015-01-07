@@ -21,23 +21,31 @@ def main():
     args = parser.parse_args()
 
     all_scores = {}
+    all_stratnames = {}
     for csvfile in args.csvfiles:
         try:
             table = pd.read_csv(csvfile)
         except pd.parser.CParserError:
             print "had to skip %s" % csvfile
             continue
-        strat = table.groupby(args.stratifier)
         accs = []
+        stratnames = []
         for stratname, strat in table.groupby(args.stratifier):
             acc = np.sum(strat['target'] == strat['prediction']) / float(len(strat))
             accs.append(acc)
+            stratnames.append(stratname)
         all_scores[csvfile] = accs
+        all_stratnames[csvfile] = stratnames
+        print csvfile
+        print accs
+        print
+
 
     for leftfile, rightfile in combinations(all_scores.keys(), 2):
+        assert all_stratnames[leftfile] == all_stratnames[rightfile]
+        left, right = all_scores[leftfile], all_scores[rightfile]
         print leftfile
         print rightfile
-        left, right = all_scores[leftfile], all_scores[rightfile]
         t, p = wilcoxon(left, right)
         if p < .001:
             stars = "***"
@@ -47,7 +55,7 @@ def main():
             stars = "*"
         else:
             stars = ""
-        print "la: %.3f     ra: %.3f   p: %.3f %s" % (np.mean(left), np.mean(right), p, stars)
+        print "la: %.2f     ra: %.2f   t: %4.1f  p: %.3f %s" % (np.mean(left), np.mean(right), t, p, stars)
         print
 
 
